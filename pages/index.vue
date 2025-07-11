@@ -61,35 +61,53 @@
               
               <!-- Sous-titre avec effet de révélation -->
               <div class="animate-fade-in-up" style="animation-delay: 0.7s">
-                <h2 class="text-xl md:text-2xl lg:text-4xl text-slate-300 font-light relative">
+                <h2 class="text-xl md:text-2xl lg:text-4xl text-slate-300 font-light relative mb-2">
                   <span class="relative z-10">Assistant Chef de Projet</span>
                   <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-transparent opacity-20 animate-slide-reveal"></div>
                 </h2>
+                <div class="text-lg md:text-xl text-white font-medium bg-gradient-to-r from-primary-400 to-blue-400 bg-clip-text text-transparent">
+                  Spécialisé en Innovation & Gestion Budgétaire
+                </div>
               </div>
               
               <!-- Description avec animation de révélation par mots -->
               <div class="animate-fade-in-up" style="animation-delay: 1s">
                 <p class="text-lg text-slate-300 leading-relaxed max-w-2xl">
-                  <span class="animate-word-reveal" style="animation-delay: 1.2s">Étudiant</span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.3s">en</span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.4s">Master</span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.5s">1</span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.6s">Produits</span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.7s">et</span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.8s">Services</span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.9s">Multimédias,</span>
-                  <span class="animate-word-reveal" style="animation-delay: 2s">passionné</span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.1s">par</span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.2s">la</span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.3s">gestion</span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.4s">de</span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.5s">projet</span>,
-                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.6s">l'innovation</span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.7s">et</span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.8s">la</span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.9s">gestion</span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.2s">Étudiant </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.3s">en </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.4s">Master </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.5s">1 </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.6s">Produits </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.7s">et </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.8s">Services </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.9s">Multimédias, </span>
+                  <br class="hidden sm:block">
+                  <span class="animate-word-reveal" style="animation-delay: 2s">passionné </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.1s">par </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.2s">la </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.3s">gestion </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.4s">de </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.5s">projet, </span>
+                  <br class="hidden sm:block">
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.6s">l'innovation </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.7s">et </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.8s">la </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.9s">gestion </span>
                   <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 3s">budgétaire</span>.
                 </p>
+                
+                <!-- Badges de compétences clés -->
+                <div class="flex flex-wrap gap-3 mt-6 animate-fade-in-up" style="animation-delay: 3.1s">
+                  <span class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    🎯 Gestion de Projet
+                  </span>
+                  <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    💡 Innovation
+                  </span>
+                  <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    💰 Gestion Budgétaire
+                  </span>
+                </div>
               </div>
               
               <!-- Boutons d'action avec animations sophistiquées -->

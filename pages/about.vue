@@ -39,12 +39,23 @@
                 <div class="relative w-full aspect-square mb-8 group">
                   <div class="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-3xl rotate-6 opacity-20 group-hover:rotate-12 transition-transform duration-500"></div>
                   <div class="relative w-full h-full rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 p-4 shadow-2xl group-hover:scale-105 transition-all duration-500">
-                    <div class="w-full h-full rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 border-4 border-white shadow-inner flex items-center justify-center relative overflow-hidden">
-                      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                      <div class="text-center relative z-10">
-                        <div class="text-6xl font-bold text-primary-600 mb-3 animate-pulse-slow">AN</div>
-                        <p class="text-primary-700 font-semibold text-lg">Ange Ngoundzi</p>
-                        <p class="text-primary-600 text-sm mt-1">Assistant Chef de Projet</p>
+                    <div class="w-full h-full rounded-2xl border-4 border-white shadow-inner relative overflow-hidden">
+                      <!-- Effet de brillance -->
+                      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-10"></div>
+                      
+                      <!-- Photo de profil -->
+                      <img 
+                        src="/profile.jpg" 
+                        alt="Ange Ngoundzi - Assistant Chef de Projet"
+                        class="w-full h-full object-cover rounded-xl"
+                      />
+                      
+                      <!-- Overlay avec nom (apparaît au survol) -->
+                      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20">
+                        <div class="text-white text-center">
+                          <div class="font-bold text-lg">Ange Ngoundzi</div>
+                          <div class="text-sm opacity-90">Assistant Chef de Projet</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -77,27 +88,27 @@
               <!-- Présentation -->
               <div class="animate-fade-in-up" style="animation-delay: 0.4s">
                 <h2 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">
-                  Passionné par la 
+                  Passionné par les 
                   <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">
-                    gestion de projet
+                    technologies émergentes
                   </span>
                   et l'
                   <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                    innovation
+                    intelligence artificielle
                   </span>
                 </h2>
                 <div class="space-y-6 text-slate-300 leading-relaxed">
                   <p class="text-lg animate-word-reveal" style="animation-delay: 0.6s">
                     Étudiant en Master 1 Produits et Services Multimédias à l'Université de Franche-Comté, 
-                    je me spécialise dans la gestion de projet, l'innovation et la gestion budgétaire.
+                    je recherche une alternance en gestion de projet digital et développement web.
                   </p>
                   <p class="animate-word-reveal" style="animation-delay: 0.8s">
-                    Mon approche combine rigueur méthodologique et vision créative pour optimiser 
-                    les processus et créer des offres adaptées aux besoins clients.
+                    Passionné par les technologies émergentes et l'intelligence artificielle, je souhaite mettre à profit 
+                    mes compétences en pilotage de projets agiles, en UI/UX design et en développement front-end.
                   </p>
                   <p class="animate-word-reveal" style="animation-delay: 1s">
-                    Basé à Besançon, j'ai acquis une expérience significative dans le pilotage de projets 
-                    audiovisuels, la coordination d'équipes et l'utilisation d'outils de gestion modernes.
+                    Mon objectif est d'accompagner des projets innovants et à forte valeur ajoutée, 
+                    en combinant rigueur méthodologique et vision créative.
                   </p>
                   <div class="bg-gradient-to-r from-primary-500 to-blue-500 bg-opacity-20 backdrop-blur-sm border-l-4 border-primary-400 p-6 rounded-r-2xl mt-8 animate-slide-in-right" style="animation-delay: 1.2s">
                     <p class="font-medium text-primary-300 flex items-center gap-3">
@@ -135,7 +146,7 @@
               <div class="flex-1">
                 <h4 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-primary-600 transition-colors">Master 1 Produits et Services Multimédias</h4>
                 <p class="text-primary-600 font-medium mb-2 text-lg">Université de Franche-Comté</p>
-                <p class="text-slate-500">Spécialisation en gestion de projet et innovation</p>
+                <p class="text-slate-500">Formation en gestion de projet digital et développement web</p>
               </div>
               <div class="flex items-center gap-4">
                 <div class="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
@@ -153,7 +164,7 @@
               <div class="flex-1">
                 <h4 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">Licence Professionnelle Communication Digitale</h4>
                 <p class="text-blue-600 font-medium mb-2 text-lg">INPTIC</p>
-                <p class="text-slate-500">Formation en communication numérique et multimédia</p>
+                <p class="text-slate-500">Formation en communication digitale et technologies numériques</p>
               </div>
               <div class="flex items-center gap-4">
                 <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
@@ -198,24 +209,24 @@
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           <div class="group text-center p-8 bg-white border border-slate-200 rounded-3xl shadow-lg hover:shadow-2xl hover:border-primary-200 transition-all duration-500 hover:-translate-y-4 hover:rotate-2 animate-fade-in-up" style="animation-delay: 0.1s">
-            <div class="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">📸</div>
-            <h4 class="font-semibold text-slate-900 mb-2">Photographie</h4>
-            <p class="text-slate-500 text-sm">Capture de moments</p>
+            <div class="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">🤖</div>
+            <h4 class="font-semibold text-slate-900 mb-2">Intelligence Artificielle</h4>
+            <p class="text-slate-500 text-sm">Technologies émergentes</p>
           </div>
           <div class="group text-center p-8 bg-white border border-slate-200 rounded-3xl shadow-lg hover:shadow-2xl hover:border-primary-200 transition-all duration-500 hover:-translate-y-4 hover:rotate-2 animate-fade-in-up" style="animation-delay: 0.2s">
-            <div class="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">⚽</div>
-            <h4 class="font-semibold text-slate-900 mb-2">Football</h4>
-            <p class="text-slate-500 text-sm">Sport d'équipe</p>
+            <div class="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">🎨</div>
+            <h4 class="font-semibold text-slate-900 mb-2">UI/UX Design</h4>
+            <p class="text-slate-500 text-sm">Design d'interface</p>
           </div>
           <div class="group text-center p-8 bg-white border border-slate-200 rounded-3xl shadow-lg hover:shadow-2xl hover:border-primary-200 transition-all duration-500 hover:-translate-y-4 hover:rotate-2 animate-fade-in-up" style="animation-delay: 0.3s">
-            <div class="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">📚</div>
-            <h4 class="font-semibold text-slate-900 mb-2">Lecture</h4>
-            <p class="text-slate-500 text-sm">Développement personnel</p>
+            <div class="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">📸</div>
+            <h4 class="font-semibold text-slate-900 mb-2">Photographie</h4>
+            <p class="text-slate-500 text-sm">Capture créative</p>
           </div>
           <div class="group text-center p-8 bg-white border border-slate-200 rounded-3xl shadow-lg hover:shadow-2xl hover:border-primary-200 transition-all duration-500 hover:-translate-y-4 hover:rotate-2 animate-fade-in-up" style="animation-delay: 0.4s">
-            <div class="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">🎬</div>
-            <h4 class="font-semibold text-slate-900 mb-2">Cinéma</h4>
-            <p class="text-slate-500 text-sm">Art visuel</p>
+            <div class="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">💡</div>
+            <h4 class="font-semibold text-slate-900 mb-2">Innovation</h4>
+            <p class="text-slate-500 text-sm">Innovation numérique</p>
           </div>
         </div>
       </div>

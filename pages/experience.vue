@@ -53,17 +53,19 @@
                 <div class="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border border-slate-200">
                   <div class="flex items-center justify-end gap-4 mb-4">
                     <div class="text-right">
-                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">Master 1 Produits et Services Multimédias</h3>
-                      <p class="text-primary-600 font-medium">En cours</p>
+                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">Chef de projet digital – Projet annuel « Rhizome »</h3>
+                      <p class="text-primary-600 font-medium">Pilotage projet IA & écologie</p>
                     </div>
                     <div class="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                      <span class="text-2xl">🎓</span>
+                      <span class="text-2xl">🤖</span>
                     </div>
                   </div>
-                  <p class="text-slate-600 leading-relaxed">
-                    Formation approfondie en gestion de projet, innovation et méthodologies agiles. 
-                    Développement de compétences en coordination d'équipes et gestion budgétaire.
-                  </p>
+                  <ul class="text-slate-600 leading-relaxed space-y-2">
+                    <li>• Pilotage d'un projet IA & écologie, en mode agile</li>
+                    <li>• Coordination d'une équipe de 5 personnes (organisation, suivi, reporting)</li>
+                    <li>• Conception UX/UI (wireframes & prototypes sur Figma)</li>
+                    <li>• Développement front-end (Nuxt.js, HTML, CSS, JS)</li>
+                  </ul>
                   <div class="mt-4 flex justify-end">
                     <span class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-medium">
                       2024 - En cours
@@ -89,18 +91,18 @@
                 <div class="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border border-slate-200">
                   <div class="flex items-center gap-4 mb-4">
                     <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                      <span class="text-2xl">🎬</span>
+                      <span class="text-2xl">💰</span>
                     </div>
                     <div>
-                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Chef de projet - Projet Annuel - Ricome</h3>
-                      <p class="text-blue-600 font-medium">Télévision complète de projet</p>
+                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Trésorier – Association PLASMA</h3>
+                      <p class="text-blue-600 font-medium">Gestion budgétaire et financière</p>
                     </div>
                   </div>
                   <ul class="text-slate-600 leading-relaxed space-y-2">
-                    <li>• Utilisation de Trello, diagrammes de Gantt, Figma, GitHub</li>
-                    <li>• Développement avec Node.js, MySQL, WordPress</li>
-                    <li>• Organisation d'un événement musical (200+ participants)</li>
-                    <li>• Gestion de budget et coordination d'équipe</li>
+                    <li>• Gestion budgétaire et financière (budget de 8 000 €)</li>
+                    <li>• Organisation d'événements numériques et technologiques</li>
+                    <li>• Suivi rigoureux des dépenses et reporting financier</li>
+                    <li>• Coordination avec les partenaires et sponsors</li>
                   </ul>
                   <div class="mt-4">
                     <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
@@ -117,21 +119,22 @@
                 <div class="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border border-slate-200">
                   <div class="flex items-center justify-end gap-4 mb-4">
                     <div class="text-right">
-                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Trésorier / Association PLASMA</h3>
-                      <p class="text-purple-600 font-medium">Gestion financière et événementielle</p>
+                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Chef de Projet Audiovisuel – MAYS PROD (Gabon)</h3>
+                      <p class="text-purple-600 font-medium">Gestion de projets audiovisuels</p>
                     </div>
                     <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                      <span class="text-2xl">💰</span>
+                      <span class="text-2xl">🎬</span>
                     </div>
                   </div>
                   <ul class="text-slate-600 leading-relaxed space-y-2">
-                    <li>• Gestion du budget pour divers événements et projets technologiques</li>
-                    <li>• Suivi rigoureux des dépenses et reporting financier</li>
-                    <li>• Coordination avec les partenaires et sponsors</li>
+                    <li>• Gestion de projets audiovisuels (budget, planning, livrables)</li>
+                    <li>• Suivi d'équipe et coordination via Trello</li>
+                    <li>• Relation client et reporting</li>
+                    <li>• Coordination d'équipes créatives et respect des délais</li>
                   </ul>
                   <div class="mt-4 flex justify-end">
                     <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                      2024 - En cours
+                      2021 - 2024
                     </span>
                   </div>
                 </div>
@@ -154,60 +157,28 @@
                 <div class="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border border-slate-200">
                   <div class="flex items-center gap-4 mb-4">
                     <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                      <span class="text-2xl">🎵</span>
+                      <span class="text-2xl">🏥</span>
                     </div>
                     <div>
-                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-600 transition-colors">MAYS PROD Gabon</h3>
-                      <p class="text-green-600 font-medium">Chef de Projet Audiovisuel</p>
+                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-600 transition-colors">Association Gabonaise des Hémophiles</h3>
+                      <p class="text-green-600 font-medium">Assistante Chef de Projet Digital</p>
                     </div>
                   </div>
                   <ul class="text-slate-600 leading-relaxed space-y-2">
-                    <li>• Pilotage de projets audiovisuels avec gestion de budget</li>
-                    <li>• Respect des délais et coordination d'équipes créatives</li>
-                    <li>• Gestion d'une équipe de 8 personnes pour des événements</li>
-                    <li>• Utilisation de Trello pour la gestion des tâches</li>
+                    <li>• Analyse des besoins et mise en place d'une stratégie digitale</li>
+                    <li>• Développement et mise en ligne d'un site WordPress</li>
+                    <li>• Architecture, contenu et modules du site web</li>
+                    <li>• Amélioration de la visibilité digitale de l'association</li>
                   </ul>
                   <div class="mt-4">
                     <span class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                      Janvier 2021 - Juillet 2024
+                      2019 (3 mois)
                     </span>
                   </div>
                 </div>
               </div>
             </div>
             
-            <!-- Expérience 5 -->
-            <div class="relative flex items-center animate-fade-in-up" style="animation-delay: 0.5s">
-              <div class="w-1/2 pr-8 text-right">
-                <div class="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border border-slate-200">
-                  <div class="flex items-center justify-end gap-4 mb-4">
-                    <div class="text-right">
-                      <h3 class="text-xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors">Association Gabonaise des Hémophiles</h3>
-                      <p class="text-orange-600 font-medium">Assistante Chef de Projet en Stratégie Digitale</p>
-                    </div>
-                    <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                      <span class="text-2xl">🏥</span>
-                    </div>
-                  </div>
-                  <ul class="text-slate-600 leading-relaxed space-y-2">
-                    <li>• Analyse des besoins de sensibilisation sur l'hémophilie</li>
-                    <li>• Création et mise en ligne d'un site sous WordPress</li>
-                    <li>• Développement d'une stratégie digitale complète</li>
-                    <li>• Amélioration de la visibilité digitale de l'association</li>
-                  </ul>
-                  <div class="mt-4 flex justify-end">
-                    <span class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                      Juillet - Septembre 2019
-                    </span>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Point central -->
-              <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full border-4 border-white shadow-lg animate-pulse-slow"></div>
-              
-              <div class="w-1/2 pl-8"></div>
-            </div>
           </div>
         </div>
       </div>

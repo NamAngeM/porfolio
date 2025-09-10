@@ -246,7 +246,7 @@ const submitForm = async () => {
 // Fonction pour télécharger le CV
 const downloadCV = () => {
   const link = document.createElement('a')
-  link.href = '/cv-ange-ngoundzi.pdf'
+  link.href = '/cv/cv-ange-ngoundzi.pdf'
   link.download = 'CV-Ange-Ngoundzi.pdf'
   link.click()
 }

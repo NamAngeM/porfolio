@@ -33,6 +33,33 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Respect des préférences d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus visible pour la navigation au clavier */
+*:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Amélioration du contraste pour les liens */
+a:not(.text-white):not(.text-primary-400):not(.text-blue-400):not(.text-purple-400) {
+  color: #1e40af;
+}
+
+a:not(.text-white):not(.text-primary-400):not(.text-blue-400):not(.text-purple-400):hover {
+  color: #1d4ed8;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

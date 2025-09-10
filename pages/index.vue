@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section avec animations avancées -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden" role="banner" aria-label="Section principale de présentation">
       <!-- Arrière-plan animé avec particules -->
       <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-primary-900">
         <!-- Particules flottantes -->
@@ -53,7 +53,7 @@
               <div class="animate-fade-in-up" style="animation-delay: 0.2s">
                 <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight">
                   <span class="block animate-slide-in-left">Bonjour, je suis</span>
-                  <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-blue-400 to-purple-400 mt-2 animate-gradient-x font-serif animate-slide-in-right" style="animation-delay: 0.5s">
+                  <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-blue-400 to-purple-400 mt-2 animate-gradient-x font-serif animate-slide-in-right" style="animation-delay: 0.5s" aria-label="Ange Ngoundzi">
                     Ange Ngoundzi
                   </span>
                 </h1>
@@ -62,11 +62,11 @@
               <!-- Sous-titre avec effet de révélation -->
               <div class="animate-fade-in-up" style="animation-delay: 0.7s">
                 <h2 class="text-xl md:text-2xl lg:text-4xl text-slate-300 font-light relative mb-2">
-                  <span class="relative z-10">Assistant Chef de Projet</span>
+                  <span class="relative z-10">Assistant Chef de Projet & Développement Web</span>
                   <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-transparent opacity-20 animate-slide-reveal"></div>
                 </h2>
                 <div class="text-lg md:text-xl text-white font-medium bg-gradient-to-r from-primary-400 to-blue-400 bg-clip-text text-transparent">
-                  Spécialisé en Innovation & Gestion Budgétaire
+                  Junior spécialisé en gestion de projet numérique et IA
                 </div>
               </div>
               
@@ -82,18 +82,19 @@
                   <span class="animate-word-reveal" style="animation-delay: 1.8s">Services </span>
                   <span class="animate-word-reveal" style="animation-delay: 1.9s">Multimédias, </span>
                   <br class="hidden sm:block">
-                  <span class="animate-word-reveal" style="animation-delay: 2s">passionné </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.1s">par </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.2s">la </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.3s">gestion </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.4s">de </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.5s">projet, </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2s">je </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.1s">recherche </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.2s">une </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.3s">alternance </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.4s">en </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.5s">gestion </span>
                   <br class="hidden sm:block">
-                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.6s">l'innovation </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.7s">et </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.8s">la </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.9s">gestion </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 3s">budgétaire</span>.
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.6s">de </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.7s">projet </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.8s">digital </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.9s">et </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 3s">développement </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 3.1s">web</span>.
                 </p>
                 
                 <!-- Badges de compétences clés -->
@@ -102,11 +103,14 @@
                     🎯 Gestion de Projet
                   </span>
                   <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    💡 Innovation
+                    🤖 Intelligence Artificielle
                   </span>
                   <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    💰 Gestion Budgétaire
+                    💻 Développement Web
                   </span>
+                  <a href="https://epikaizo-website-kk7z84rfm-nams-projects-08436685.vercel.app/" target="_blank" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    🌐 Projet Epikaizo
+                  </a>
                 </div>
               </div>
               
@@ -154,12 +158,23 @@
                 <div class="relative w-full h-full rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 p-4 shadow-2xl transform group-hover:scale-105 transition-all duration-500 group-hover:rotate-2">
                   <div class="w-full h-full rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 border-4 border-white shadow-inner flex items-center justify-center relative overflow-hidden">
                     <!-- Effet de brillance -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-10"></div>
                     
-                    <div class="text-center relative z-10">
-                      <div class="text-7xl md:text-8xl font-bold text-primary-600 mb-3 animate-pulse-slow">AN</div>
-                      <div class="text-slate-700 text-lg font-medium animate-fade-in">Ange Ngoundzi</div>
-                      <div class="text-slate-600 text-sm mt-1 animate-fade-in" style="animation-delay: 0.2s">Assistant Chef de Projet</div>
+                    <!-- Photo de profil -->
+                    <NuxtImg 
+                      src="/profile.jpg" 
+                      alt="Photo de profil d'Ange Ngoundzi, Assistant Chef de Projet spécialisé en gestion de projet digital"
+                      class="w-full h-full object-cover rounded-xl"
+                      loading="lazy"
+                      sizes="sm:100vw md:50vw lg:400px"
+                    />
+                    
+                    <!-- Overlay avec nom (optionnel, apparaît au survol) -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20">
+                      <div class="text-white text-center">
+                        <div class="font-bold text-lg">Ange Ngoundzi</div>
+                        <div class="text-sm opacity-90">Assistant Chef de Projet</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -250,7 +265,7 @@
               <span class="text-4xl animate-bounce-slow">📊</span>
             </div>
             <h4 class="font-bold text-slate-900 mb-3 text-lg group-hover:text-blue-600 transition-colors">Gestion de Projet</h4>
-            <p class="text-slate-600 text-sm leading-relaxed">Trello, Gantt, Figma, GitHub</p>
+            <p class="text-slate-600 text-sm leading-relaxed">Scrum, Kanban, Trello, Jira, GitHub</p>
             <div class="mt-6 flex justify-center space-x-2">
               <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse" style="animation-delay: 0s"></div>
               <div class="w-3 h-3 bg-blue-300 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
@@ -262,8 +277,8 @@
             <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
               <span class="text-4xl animate-bounce-slow">💻</span>
             </div>
-            <h4 class="font-bold text-slate-900 mb-3 text-lg group-hover:text-green-600 transition-colors">Développement</h4>
-            <p class="text-slate-600 text-sm leading-relaxed">Node.js, MySQL, WordPress</p>
+            <h4 class="font-bold text-slate-900 mb-3 text-lg group-hover:text-green-600 transition-colors">Développement Web</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">Nuxt.js, HTML, CSS, JS, WordPress</p>
             <div class="mt-6 flex justify-center space-x-2">
               <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse" style="animation-delay: 0s"></div>
               <div class="w-3 h-3 bg-green-300 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
@@ -275,8 +290,8 @@
             <div class="w-24 h-24 bg-gradient-to-br from-purple-400 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
               <span class="text-4xl animate-bounce-slow">🎥</span>
             </div>
-            <h4 class="font-bold text-slate-900 mb-3 text-lg group-hover:text-purple-600 transition-colors">Audiovisuel</h4>
-            <p class="text-slate-600 text-sm leading-relaxed">Pilotage projets, budgets</p>
+            <h4 class="font-bold text-slate-900 mb-3 text-lg group-hover:text-purple-600 transition-colors">UI/UX Design</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">Figma, Wireframes, Prototypes</p>
             <div class="mt-6 flex justify-center space-x-2">
               <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse" style="animation-delay: 0s"></div>
               <div class="w-3 h-3 bg-purple-300 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
@@ -289,7 +304,7 @@
               <span class="text-4xl animate-bounce-slow">🌐</span>
             </div>
             <h4 class="font-bold text-slate-900 mb-3 text-lg group-hover:text-orange-600 transition-colors">Langues</h4>
-            <p class="text-slate-600 text-sm leading-relaxed">Français, Anglais</p>
+            <p class="text-slate-600 text-sm leading-relaxed">Français (courant), Anglais (notions)</p>
             <div class="mt-6 flex justify-center space-x-2">
               <div class="w-3 h-3 bg-orange-400 rounded-full animate-pulse" style="animation-delay: 0s"></div>
               <div class="w-3 h-3 bg-orange-300 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
@@ -353,9 +368,9 @@
           
           <!-- Description -->
           <p class="text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s">
-            Je recherche une alternance en tant qu'Assistant Chef de Projet pour mettre en pratique 
-            mes compétences en gestion de projet, coordination d'équipes et méthodologies agiles. 
-            Prêt à contribuer à vos projets innovants !
+            Passionné par les technologies émergentes et l'intelligence artificielle, je souhaite mettre à profit 
+            mes compétences en pilotage de projets agiles, en UI/UX design et en développement front-end 
+            pour accompagner des projets innovants et à forte valeur ajoutée.
           </p>
           
           <!-- Boutons d'action -->
@@ -402,7 +417,7 @@ useHead({
 
 const downloadCV = () => {
   const link = document.createElement('a')
-  link.href = '/cv-ange-ngoundzi.pdf'
+  link.href = '/cv/cv-ange-ngoundzi.pdf'
   link.download = 'CV-Ange-Ngoundzi.pdf'
   link.click()
 }

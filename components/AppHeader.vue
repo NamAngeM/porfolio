@@ -8,6 +8,7 @@
         
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
+          <ThemeToggle />
           <NuxtLink 
             v-for="item in menuItems" 
             :key="item.name"
@@ -103,7 +104,7 @@ const closeMobileMenu = () => {
 
 const downloadCV = () => {
   const link = document.createElement('a')
-  link.href = '/cv-ange-ngoundzi.pdf'
+  link.href = '/cv/cv-ange-ngoundzi.pdf'
   link.download = 'CV-Ange-Ngoundzi.pdf'
   link.click()
 }

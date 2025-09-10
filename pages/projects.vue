@@ -28,8 +28,8 @@
           </h1>
           <div class="w-32 h-1 bg-gradient-to-r from-primary-500 to-blue-500 mx-auto rounded-full animate-scale-x"></div>
           <p class="text-slate-300 mt-6 max-w-2xl mx-auto text-lg">
-            Découvrez une sélection de mes réalisations qui démontrent mes compétences en développement web, 
-            mobile et en intelligence artificielle.
+            Découvrez une sélection de mes projets qui démontrent mes compétences en gestion de projet, 
+            développement web et intelligence artificielle.
           </p>
         </div>
         
@@ -51,11 +51,11 @@
               Web
             </button>
             <button 
-              @click="filterProjects('mobile')"
-              :class="activeFilter === 'mobile' ? 'bg-gradient-to-r from-green-500 to-green-600 text-white' : 'bg-slate-800 bg-opacity-50 backdrop-blur-sm text-slate-300 hover:text-white border border-slate-700 hover:border-green-500'"
+              @click="filterProjects('design')"
+              :class="activeFilter === 'design' ? 'bg-gradient-to-r from-green-500 to-green-600 text-white' : 'bg-slate-800 bg-opacity-50 backdrop-blur-sm text-slate-300 hover:text-white border border-slate-700 hover:border-green-500'"
               class="px-6 py-3 rounded-2xl font-medium transition-all duration-300 shadow-lg"
             >
-              Mobile
+              UI/UX
             </button>
             <button 
               @click="filterProjects('ai')"
@@ -215,120 +215,94 @@ const activeFilter = ref('all')
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'Plateforme e-commerce complète avec gestion des produits, panier, paiements et administration.',
+    title: 'Epikaizo - Site Web',
+    description: 'Site web moderne développé avec les dernières technologies web, mettant en avant une interface utilisateur intuitive et des performances optimisées.',
     category: 'Web',
     categoryColor: 'bg-blue-100 text-blue-800',
     iconBg: 'bg-gradient-to-br from-blue-400 to-blue-600',
-    technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Stripe'],
-    icon: '🛒',
-    demoUrl: '#',
+    technologies: ['Nuxt.js', 'Vue.js', 'Tailwind CSS', 'TypeScript'],
+    icon: '🌐',
+    demoUrl: 'https://epikaizo-website-kk7z84rfm-nams-projects-08436685.vercel.app/',
     githubUrl: '#',
     type: 'web'
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'Application mobile de gestion de tâches avec synchronisation cloud et notifications push.',
-    category: 'Mobile',
-    categoryColor: 'bg-green-100 text-green-800',
-    iconBg: 'bg-gradient-to-br from-green-400 to-green-600',
-    technologies: ['React Native', 'Firebase', 'Redux'],
-    icon: '📱',
-    demoUrl: '#',
-    githubUrl: '#',
-    type: 'mobile'
-  },
-  {
-    id: 3,
-    title: 'AI Chatbot Assistant',
-    description: 'Assistant conversationnel intelligent utilisant le traitement du langage naturel.',
+    title: 'Projet Rhizome - IA & Écologie',
+    description: 'Pilotage d\'un projet innovant liant intelligence artificielle et écologie, en mode agile avec une équipe de 5 personnes.',
     category: 'IA',
     categoryColor: 'bg-purple-100 text-purple-800',
     iconBg: 'bg-gradient-to-br from-purple-400 to-purple-600',
-    technologies: ['Python', 'TensorFlow', 'NLP', 'FastAPI'],
+    technologies: ['Nuxt.js', 'HTML', 'CSS', 'JS', 'Figma'],
     icon: '🤖',
     demoUrl: '#',
     githubUrl: '#',
     type: 'ai'
   },
   {
+    id: 3,
+    title: 'Site WordPress - Association Hémophiles',
+    description: 'Développement et mise en ligne d\'un site WordPress complet avec architecture, contenu et modules personnalisés.',
+    category: 'Web',
+    categoryColor: 'bg-blue-100 text-blue-800',
+    iconBg: 'bg-gradient-to-br from-blue-400 to-blue-600',
+    technologies: ['WordPress', 'PHP', 'CSS', 'JavaScript'],
+    icon: '🏥',
+    demoUrl: '#',
+    githubUrl: '#',
+    type: 'web'
+  },
+  {
     id: 4,
-    title: 'Portfolio Website',
-    description: 'Site portfolio moderne et responsive avec animations fluides et design élégant.',
+    title: 'Wireframes & Prototypes Figma',
+    description: 'Conception UX/UI avec création de wireframes et prototypes interactifs sur Figma pour divers projets.',
+    category: 'UI/UX',
+    categoryColor: 'bg-green-100 text-green-800',
+    iconBg: 'bg-gradient-to-br from-green-400 to-green-600',
+    technologies: ['Figma', 'Prototyping', 'Wireframing', 'UI Design'],
+    icon: '🎨',
+    demoUrl: '#',
+    githubUrl: '#',
+    type: 'design'
+  },
+  {
+    id: 5,
+    title: 'Portfolio Personnel',
+    description: 'Site portfolio moderne et responsive développé avec Nuxt.js, Tailwind CSS et animations fluides.',
     category: 'Web',
     categoryColor: 'bg-blue-100 text-blue-800',
     iconBg: 'bg-gradient-to-br from-primary-400 to-primary-600',
-    technologies: ['Nuxt.js', 'Tailwind CSS', 'VueUse'],
+    technologies: ['Nuxt.js', 'Tailwind CSS', 'VueUse', 'JavaScript'],
     icon: '💼',
     demoUrl: '#',
     githubUrl: '#',
     type: 'web'
   },
   {
-    id: 5,
-    title: 'Weather Forecast App',
-    description: 'Application météo avec géolocalisation, prévisions détaillées et interface intuitive.',
-    category: 'Mobile',
-    categoryColor: 'bg-green-100 text-green-800',
-    iconBg: 'bg-gradient-to-br from-cyan-400 to-cyan-600',
-    technologies: ['Flutter', 'Dart', 'OpenWeather API'],
-    icon: '🌤️',
-    demoUrl: '#',
-    githubUrl: '#',
-    type: 'mobile'
-  },
-  {
     id: 6,
-    title: 'Image Recognition System',
-    description: 'Système de reconnaissance d\'images utilisant des réseaux de neurones convolutifs.',
-    category: 'IA',
-    categoryColor: 'bg-purple-100 text-purple-800',
-    iconBg: 'bg-gradient-to-br from-indigo-400 to-indigo-600',
-    technologies: ['Python', 'OpenCV', 'PyTorch', 'CNN'],
-    icon: '👁️',
-    demoUrl: '#',
-    githubUrl: '#',
-    type: 'ai'
-  },
-  {
-    id: 7,
-    title: 'Social Media Dashboard',
-    description: 'Tableau de bord pour gérer plusieurs comptes de réseaux sociaux avec analytics.',
-    category: 'Web',
-    categoryColor: 'bg-blue-100 text-blue-800',
-    iconBg: 'bg-gradient-to-br from-pink-400 to-pink-600',
-    technologies: ['React', 'Chart.js', 'Express.js', 'PostgreSQL'],
-    icon: '📊',
+    title: 'Gestion de Projets Audiovisuels',
+    description: 'Pilotage de projets audiovisuels avec gestion de budget, planning et coordination d\'équipes créatives.',
+    category: 'Gestion',
+    categoryColor: 'bg-orange-100 text-orange-800',
+    iconBg: 'bg-gradient-to-br from-orange-400 to-orange-600',
+    technologies: ['Trello', 'Gantt', 'Budget Management', 'Team Coordination'],
+    icon: '🎬',
     demoUrl: '#',
     githubUrl: '#',
     type: 'web'
   },
   {
-    id: 8,
-    title: 'Fitness Tracker',
-    description: 'Application de suivi fitness avec objectifs personnalisés et statistiques détaillées.',
-    category: 'Mobile',
-    categoryColor: 'bg-green-100 text-green-800',
-    iconBg: 'bg-gradient-to-br from-orange-400 to-orange-600',
-    technologies: ['Ionic', 'Angular', 'SQLite', 'HealthKit'],
-    icon: '💪',
+    id: 7,
+    title: 'Stratégie Digitale - Association',
+    description: 'Analyse des besoins et mise en place d\'une stratégie digitale complète pour améliorer la visibilité.',
+    category: 'Stratégie',
+    categoryColor: 'bg-indigo-100 text-indigo-800',
+    iconBg: 'bg-gradient-to-br from-indigo-400 to-indigo-600',
+    technologies: ['Digital Strategy', 'Analytics', 'SEO', 'Content Management'],
+    icon: '📊',
     demoUrl: '#',
     githubUrl: '#',
-    type: 'mobile'
-  },
-  {
-    id: 9,
-    title: 'Predictive Analytics Tool',
-    description: 'Outil d\'analyse prédictive pour les données de vente avec machine learning.',
-    category: 'IA',
-    categoryColor: 'bg-purple-100 text-purple-800',
-    iconBg: 'bg-gradient-to-br from-emerald-400 to-emerald-600',
-    technologies: ['Python', 'Scikit-learn', 'Pandas', 'Plotly'],
-    icon: '📈',
-    demoUrl: '#',
-    githubUrl: '#',
-    type: 'ai'
+    type: 'web'
   }
 ]
 

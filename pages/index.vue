@@ -51,22 +51,20 @@
               
               <!-- Titre principal avec effet de machine à écrire -->
               <div class="animate-fade-in-up" style="animation-delay: 0.2s">
-                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight">
-                  <span class="block animate-slide-in-left">Bonjour, je suis</span>
-                  <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-blue-400 to-purple-400 mt-2 animate-gradient-x font-serif animate-slide-in-right" style="animation-delay: 0.5s" aria-label="Ange Ngoundzi">
-                    Ange Ngoundzi
-                  </span>
-                </h1>
+              <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight">
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-blue-400 to-purple-400 animate-gradient-x font-serif" aria-label="Ange Ngoundzi">
+                  Ange Ngoundzi
+                </span>
+                <span class="block text-2xl md:text-3xl lg:text-4xl font-medium text-white/90 mt-4 animate-fade-in-up" style="animation-delay: 0.5s">
+                  Développeur Web Front-End & Chef de Projet Digital
+                </span>
+              </h1>
               </div>
               
-              <!-- Sous-titre avec effet de révélation -->
+              <!-- Description professionnelle -->
               <div class="animate-fade-in-up" style="animation-delay: 0.7s">
-                <h2 class="text-xl md:text-2xl lg:text-4xl text-slate-300 font-light relative mb-2">
-                  <span class="relative z-10">Assistant Chef de Projet & Développement Web</span>
-                  <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-transparent opacity-20 animate-slide-reveal"></div>
-                </h2>
                 <div class="text-lg md:text-xl text-white font-medium bg-gradient-to-r from-primary-400 to-blue-400 bg-clip-text text-transparent">
-                  Junior spécialisé en gestion de projet numérique et IA
+                  Développeur Front-End • 3+ ans d'expérience • Spécialisé Nuxt.js & Flutter
                 </div>
               </div>
               
@@ -82,41 +80,39 @@
                   <span class="animate-word-reveal" style="animation-delay: 1.8s">Services </span>
                   <span class="animate-word-reveal" style="animation-delay: 1.9s">Multimédias, </span>
                   <br class="hidden sm:block">
-                  <span class="animate-word-reveal" style="animation-delay: 2s">je </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.1s">recherche </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.2s">une </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.3s">alternance </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.4s">en </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.5s">gestion </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2s">recherche </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.1s">alternance </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.2s">en </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.3s">gestion </span>
                   <br class="hidden sm:block">
-                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.6s">de </span>
-                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.7s">projet </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.8s">digital </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.9s">et </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 3s">développement </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 3.1s">web</span>.
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.4s">de </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.5s">projet </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.6s">digital </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.7s">et </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.8s">développement </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.9s">web</span>.
                 </p>
                 
-                <!-- Badges de compétences clés -->
+                <!-- Badges de compétences clés avec niveaux -->
                 <div class="flex flex-wrap gap-3 mt-6 animate-fade-in-up" style="animation-delay: 3.1s">
                   <span class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    🎯 Gestion de Projet
+                    🎯 Gestion de Projet (3+ ans)
                   </span>
                   <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    🤖 Intelligence Artificielle
+                    💻 Nuxt.js/Vue.js (Expert)
                   </span>
                   <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    💻 Développement Web
+                    📱 Flutter (Avancé)
                   </span>
-                  <a href="https://epikaizo-website-kk7z84rfm-nams-projects-08436685.vercel.app/" target="_blank" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <span class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    🤖 IA & Dialogflow (Intermédiaire)
+                  </span>
+                  <a href="https://epikaizo-website-kk7z84rfm-nams-projects-08436685.vercel.app/" target="_blank" class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     🎓 EPIKAIZO UNIVERSITY
                   </a>
-                  <a href="https://nam-digital-lab.vercel.app/" target="_blank" class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <a href="https://nam-digital-lab.vercel.app/" target="_blank" class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     💻 NAM Digital Lab
                   </a>
-                  <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
-                    🤖 Développé avec Cursor IA
-                  </span>
                 </div>
               </div>
               

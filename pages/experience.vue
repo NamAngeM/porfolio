@@ -63,10 +63,11 @@
                   <ul class="text-slate-600 leading-relaxed space-y-2">
                     <li>• <strong>Développement de sites web complets</strong> avec Next.js et React</li>
                     <li>• <strong>Création d'agence digitale</strong> spécialisée PME et startups</li>
-                    <li>• <strong>Conception de packs digital</strong> (Starter, Présence en ligne, Innovation IA)</li>
+                    <li>• <strong>Conception de 3 packs digital</strong> (Starter 1.2k€, Présence 2.5k€, IA 4k€)</li>
                     <li>• <strong>Développement d'identité visuelle</strong> et branding complet</li>
                     <li>• <strong>Intégration de solutions IA</strong> (chatbots, automatisations)</li>
                     <li>• <strong>Optimisation SEO</strong> et stratégie digitale</li>
+                    <li>• <strong>Livrables :</strong> Site web responsive, 3 packs commercialisés</li>
                   </ul>
                   
                   <!-- Liens vers les projets -->
@@ -83,8 +84,7 @@
                       </div>
                     </div>
                     <p class="text-sm text-slate-700 mb-4">
-                      Découvrez les sites web que j'ai développés en utilisant Cursor IA pour 
-                      l'assistance au développement et l'optimisation du code.
+                      Sites web développés avec assistance IA pour l'optimisation du code.
                     </p>
                     <div class="flex flex-wrap gap-3">
                       <a 

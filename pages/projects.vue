@@ -223,7 +223,7 @@ const projects = [
   {
     id: 1,
     title: 'Epikaizo - Site Web',
-    description: 'Site web moderne développé avec les dernières technologies web, mettant en avant une interface utilisateur intuitive et des performances optimisées.',
+    description: 'Site web moderne avec interface utilisateur intuitive et performances optimisées.',
     category: 'Web',
     categoryColor: 'bg-blue-100 text-blue-800',
     iconBg: 'bg-gradient-to-br from-blue-400 to-blue-600',
@@ -236,7 +236,7 @@ const projects = [
   {
     id: 2,
     title: 'NAM Digital Lab',
-    description: 'Laboratoire digital innovant présentant des projets technologiques avancés, avec une interface moderne et des animations fluides.',
+    description: 'Laboratoire digital présentant des projets technologiques avec interface moderne.',
     category: 'Web',
     categoryColor: 'bg-blue-100 text-blue-800',
     iconBg: 'bg-gradient-to-br from-green-400 to-green-600',

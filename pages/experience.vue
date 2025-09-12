@@ -131,7 +131,38 @@
                     <li>• Suivi d'équipe et coordination via Trello</li>
                     <li>• Relation client et reporting</li>
                     <li>• Coordination d'équipes créatives et respect des délais</li>
+                    <li>• <strong>Analyse des besoins clients</strong> et traduction en briefs créatifs</li>
+                    <li>• <strong>Collaboration étroite avec l'infographe</strong> pour la réalisation des projets</li>
                   </ul>
+                  
+                  <!-- Document PDF des réalisations -->
+                  <div class="mt-6 p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl border border-purple-200">
+                    <div class="flex items-center gap-3 mb-3">
+                      <div class="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-slate-900">Portfolio des Réalisations</h4>
+                        <p class="text-sm text-slate-600">Projets audiovisuels dirigés chez MAYS PROD</p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4">
+                      Découvrez un aperçu de mes réalisations en tant que Chef de Projet, 
+                      incluant l'analyse des besoins clients et la collaboration avec l'équipe créative.
+                    </p>
+                    <button 
+                      @click="downloadMAYSPortfolio"
+                      class="group bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 font-medium text-sm flex items-center gap-2"
+                    >
+                      <svg class="w-4 h-4 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                      </svg>
+                      Télécharger le Portfolio
+                    </button>
+                  </div>
+                  
                   <div class="mt-4 flex justify-end">
                     <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium">
                       2021 - 2024
@@ -193,6 +224,14 @@ useHead({
     { name: 'description', content: 'Découvrez les expériences professionnelles d\'Ange Ngoundzi en gestion de projet et coordination d\'équipes.' }
   ]
 })
+
+// Fonction pour télécharger le portfolio MAYS PROD
+const downloadMAYSPortfolio = () => {
+  const link = document.createElement('a')
+  link.href = '/documents/portfolio-mays-prod.pdf'
+  link.download = 'Portfolio-MAYS-PROD-Ange-Ngoundzi.pdf'
+  link.click()
+}
 </script>
 
 <style scoped>

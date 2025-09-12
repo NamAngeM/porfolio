@@ -43,11 +43,6 @@
           <!-- Contenu principal avec animations -->
           <div class="lg:col-span-7 text-center lg:text-left">
             <div class="space-y-6">
-              <!-- Badge de statut animé -->
-              <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full text-sm font-medium mb-6 animate-fade-in-up shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div class="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse-fast"></div>
-                <span class="animate-typing">Disponible pour alternance - Septembre 2025</span>
-              </div>
               
               <!-- Titre principal avec effet de machine à écrire -->
               <div class="animate-fade-in-up" style="animation-delay: 0.2s">
@@ -61,12 +56,6 @@
               </h1>
               </div>
               
-              <!-- Description professionnelle -->
-              <div class="animate-fade-in-up" style="animation-delay: 0.7s">
-                <div class="text-lg md:text-xl text-white font-medium bg-gradient-to-r from-primary-400 to-blue-400 bg-clip-text text-transparent">
-                  Développeur Front-End • 3+ ans d'expérience • Spécialisé Nuxt.js & Flutter
-                </div>
-              </div>
               
               <!-- Description avec animation de révélation par mots -->
               <div class="animate-fade-in-up" style="animation-delay: 1s">
@@ -354,26 +343,7 @@
       
       <div class="container mx-auto px-6 text-center relative z-10">
         <div class="max-w-4xl mx-auto">
-          <!-- Badge animé -->
-          <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 bg-opacity-30 backdrop-blur-sm text-primary-300 rounded-full text-sm font-medium mb-8 animate-fade-in-up shadow-lg">
-            <div class="w-3 h-3 bg-primary-400 rounded-full mr-3 animate-pulse-fast"></div>
-            Recherche active d'alternance
-          </div>
           
-          <!-- Titre principal -->
-          <h3 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 leading-tight animate-fade-in-up" style="animation-delay: 0.2s">
-            <span class="block">Disponible pour une alternance</span>
-            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-blue-400 to-purple-400 mt-2 animate-gradient-x">
-              dès septembre 2025
-            </span>
-          </h3>
-          
-          <!-- Description -->
-          <p class="text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s">
-            Passionné par les technologies émergentes et l'intelligence artificielle, je souhaite mettre à profit 
-            mes compétences en pilotage de projets agiles, en UI/UX design et en développement front-end 
-            pour accompagner des projets innovants et à forte valeur ajoutée.
-          </p>
           
           <!-- Boutons d'action -->
           <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up" style="animation-delay: 0.6s">

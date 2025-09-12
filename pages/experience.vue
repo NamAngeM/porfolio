@@ -61,13 +61,13 @@
                     </div>
                   </div>
                   <ul class="text-slate-600 leading-relaxed space-y-2">
-                    <li>• <strong>Développement de sites web complets</strong> avec Next.js et React</li>
-                    <li>• <strong>Création d'agence digitale</strong> spécialisée PME et startups</li>
-                    <li>• <strong>Conception de 3 packs digital</strong> (Starter 1.2k€, Présence 2.5k€, IA 4k€)</li>
-                    <li>• <strong>Développement d'identité visuelle</strong> et branding complet</li>
-                    <li>• <strong>Intégration de solutions IA</strong> (chatbots, automatisations)</li>
-                    <li>• <strong>Optimisation SEO</strong> et stratégie digitale</li>
-                    <li>• <strong>Livrables :</strong> Site web responsive, 3 packs commercialisés</li>
+                    <li>• <strong>Développement de 2 sites web complets</strong> avec Next.js et React</li>
+                    <li>• <strong>Création d'agence digitale</strong> avec 3 packs commercialisés</li>
+                    <li>• <strong>Gestion de budget</strong> : 7.7k€ de packs digital (Starter 1.2k€, Présence 2.5k€, IA 4k€)</li>
+                    <li>• <strong>Développement d'identité visuelle</strong> pour PME et startups</li>
+                    <li>• <strong>Intégration de solutions IA</strong> (chatbots Dialogflow, automatisations)</li>
+                    <li>• <strong>Optimisation SEO</strong> et stratégie digitale complète</li>
+                    <li>• <strong>Résultat :</strong> 2 sites en production, 3 packs commercialisés, clients PME</li>
                   </ul>
                   
                   <!-- Liens vers les projets -->
@@ -138,12 +138,13 @@
                     </div>
                   </div>
                   <ul class="text-slate-600 leading-relaxed space-y-2">
-                    <li>• <strong>Pilotage d'un projet IA & écologie</strong> en mode agile</li>
-                    <li>• <strong>Coordination d'une équipe de 5 personnes</strong> (organisation, suivi, reporting)</li>
-                    <li>• <strong>Conception UX/UI</strong> (wireframes & prototypes sur Figma)</li>
-                    <li>• <strong>Développement front-end</strong> (Nuxt.js, HTML, CSS, JS)</li>
+                    <li>• <strong>Pilotage d'un projet IA & écologie</strong> en mode agile (6 mois)</li>
+                    <li>• <strong>Coordination d'une équipe de 5 personnes</strong> (planning, suivi, reporting)</li>
+                    <li>• <strong>Conception UX/UI</strong> (wireframes & prototypes Figma)</li>
+                    <li>• <strong>Développement front-end</strong> (Nuxt.js, Vue.js, Tailwind CSS)</li>
                     <li>• <strong>Développement d'une application mobile Flutter</strong> (Greens App)</li>
-                    <li>• <strong>Intégration d'un chatbot IA Dialogflow</strong> pour l'écologie</li>
+                    <li>• <strong>Intégration d'un chatbot IA Dialogflow</strong> avec mode hors ligne</li>
+                    <li>• <strong>Résultat :</strong> Application mobile complète, chatbot IA, calcul empreinte carbone</li>
                   </ul>
                   
                   <!-- Documents du projet Rhizome -->

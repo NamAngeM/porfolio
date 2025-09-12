@@ -51,7 +51,7 @@
                   Ange Ngoundzi
                 </span>
                 <span class="block text-2xl md:text-3xl lg:text-4xl font-medium text-white/90 mt-4 animate-fade-in-up" style="animation-delay: 0.5s">
-                  Développeur Web Front-End & Chef de Projet Digital
+                  Développeur Full-Stack • Gestion de Projet • 3+ ans d'expérience
                 </span>
               </h1>
               </div>
@@ -60,26 +60,26 @@
               <!-- Description avec animation de révélation par mots -->
               <div class="animate-fade-in-up" style="animation-delay: 1s">
                 <p class="text-lg text-slate-300 leading-relaxed max-w-2xl">
-                  <span class="animate-word-reveal" style="animation-delay: 1.2s">Étudiant </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.3s">en </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.4s">Master </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.5s">1 </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.6s">Produits </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.7s">et </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.8s">Services </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.9s">Multimédias, </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.2s">Développeur </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.3s">avec </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 1.4s">3+ </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 1.5s">années </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.6s">d'expérience </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.7s">en </span>
                   <br class="hidden sm:block">
-                  <span class="animate-word-reveal" style="animation-delay: 2s">recherche </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.1s">alternance </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.2s">en </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 2.3s">gestion </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 1.8s">développement </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 1.9s">web </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2s">et </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.1s">gestion </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.2s">de </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.3s">projet</span>.
                   <br class="hidden sm:block">
-                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.4s">de </span>
-                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.5s">projet </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.6s">digital </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.7s">et </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.8s">développement </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.9s">web</span>.
+                  <span class="animate-word-reveal" style="animation-delay: 2.4s">Spécialisé </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.5s">en </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.6s">Nuxt.js, </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.7s">Flutter </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.8s">et </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.9s">IA</span>.
                 </p>
                 
                 <!-- Badges de compétences clés avec niveaux -->
@@ -96,12 +96,12 @@
                   <span class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     🤖 IA & Dialogflow (Intermédiaire)
                   </span>
-                  <a href="https://epikaizo-website-kk7z84rfm-nams-projects-08436685.vercel.app/" target="_blank" class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    🎓 EPIKAIZO UNIVERSITY
-                  </a>
-                  <a href="https://nam-digital-lab.vercel.app/" target="_blank" class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    💻 NAM Digital Lab
-                  </a>
+                  <span class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    🎨 UI/UX Design (Intermédiaire)
+                  </span>
+                  <span class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    📊 SEO & Analytics (Intermédiaire)
+                  </span>
                 </div>
               </div>
               

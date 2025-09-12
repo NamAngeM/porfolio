@@ -2,9 +2,9 @@
   <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
-        <NuxtLink to="/" class="text-2xl font-bold text-slate-900 hover:text-primary-600 transition-colors">
-          Ange Ngoundzi
-        </NuxtLink>
+                    <NuxtLink to="/" class="text-2xl font-bold text-slate-900 hover:text-primary-600 transition-colors">
+                      Portfolio
+                    </NuxtLink>
         
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">

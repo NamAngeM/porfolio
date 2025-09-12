@@ -51,7 +51,7 @@
                   Ange Ngoundzi
                 </span>
                 <span class="block text-2xl md:text-3xl lg:text-4xl font-medium text-white/90 mt-4 animate-fade-in-up" style="animation-delay: 0.5s">
-                  Développeur Full-Stack • Gestion de Projet • 3+ ans d'expérience
+                  Chef de Projet Digital & Développeur Web
                 </span>
               </h1>
               </div>
@@ -85,19 +85,13 @@
                 <!-- Badges de compétences clés avec niveaux -->
                 <div class="flex flex-wrap gap-3 mt-6 animate-fade-in-up" style="animation-delay: 3.1s">
                   <span class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    🎯 Gestion de Projet (3+ ans)
-                  </span>
-                  <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    💻 Nuxt.js/Vue.js (Expert)
-                  </span>
-                  <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    📱 Flutter (Avancé)
+                    🎯 Gestion de Projet
                   </span>
                   <span class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    🤖 IA & Dialogflow (Intermédiaire)
+                    🤖 IA et Automatisation
                   </span>
                   <span class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    🎨 UI/UX Design (Intermédiaire)
+                    🎨 UI/UX Design
                   </span>
                   <span class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     📊 SEO & Analytics (Intermédiaire)

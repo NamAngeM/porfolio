@@ -228,6 +228,19 @@ const projects = [
   },
   {
     id: 2,
+    title: 'NAM Digital Lab',
+    description: 'Laboratoire digital innovant présentant des projets technologiques avancés, avec une interface moderne et des animations fluides.',
+    category: 'Web',
+    categoryColor: 'bg-blue-100 text-blue-800',
+    iconBg: 'bg-gradient-to-br from-green-400 to-green-600',
+    technologies: ['Nuxt.js', 'Vue.js', 'Tailwind CSS', 'JavaScript'],
+    icon: '🔬',
+    demoUrl: 'https://nam-digital-lab.vercel.app/',
+    githubUrl: '#',
+    type: 'web'
+  },
+  {
+    id: 3,
     title: 'Projet Rhizome - IA & Écologie',
     description: 'Pilotage d\'un projet innovant liant intelligence artificielle et écologie, en mode agile avec une équipe de 5 personnes.',
     category: 'IA',
@@ -240,7 +253,7 @@ const projects = [
     type: 'ai'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Site WordPress - Association Hémophiles',
     description: 'Développement et mise en ligne d\'un site WordPress complet avec architecture, contenu et modules personnalisés.',
     category: 'Web',
@@ -253,7 +266,7 @@ const projects = [
     type: 'web'
   },
   {
-    id: 4,
+    id: 5,
     title: 'Wireframes & Prototypes Figma',
     description: 'Conception UX/UI avec création de wireframes et prototypes interactifs sur Figma pour divers projets.',
     category: 'UI/UX',
@@ -266,7 +279,7 @@ const projects = [
     type: 'design'
   },
   {
-    id: 5,
+    id: 6,
     title: 'Portfolio Personnel',
     description: 'Site portfolio moderne et responsive développé avec Nuxt.js, Tailwind CSS et animations fluides.',
     category: 'Web',
@@ -279,7 +292,7 @@ const projects = [
     type: 'web'
   },
   {
-    id: 6,
+    id: 7,
     title: 'Gestion de Projets Audiovisuels',
     description: 'Pilotage de projets audiovisuels avec gestion de budget, planning et coordination d\'équipes créatives.',
     category: 'Gestion',
@@ -292,7 +305,7 @@ const projects = [
     type: 'web'
   },
   {
-    id: 7,
+    id: 8,
     title: 'Stratégie Digitale - Association',
     description: 'Analyse des besoins et mise en place d\'une stratégie digitale complète pour améliorer la visibilité.',
     category: 'Stratégie',

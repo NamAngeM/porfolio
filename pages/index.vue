@@ -111,6 +111,9 @@
                   <a href="https://epikaizo-website-kk7z84rfm-nams-projects-08436685.vercel.app/" target="_blank" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     🌐 Projet Epikaizo
                   </a>
+                  <a href="https://nam-digital-lab.vercel.app/" target="_blank" class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    🔬 NAM Digital Lab
+                  </a>
                 </div>
               </div>
               

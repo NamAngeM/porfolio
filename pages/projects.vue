@@ -230,7 +230,7 @@ const projects = [
     technologies: ['Nuxt.js', 'Vue.js', 'Tailwind CSS', 'TypeScript'],
     icon: '🌐',
     demoUrl: 'https://epikaizo-website-kk7z84rfm-nams-projects-08436685.vercel.app/',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/NamAngeM/epikaizo-website',
     type: 'web'
   },
   {
@@ -243,7 +243,7 @@ const projects = [
     technologies: ['Nuxt.js', 'Vue.js', 'Tailwind CSS', 'JavaScript'],
     icon: '🔬',
     demoUrl: 'https://nam-digital-lab.vercel.app/',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/NamAngeM/nam-digital-lab',
     type: 'web'
   },
   {

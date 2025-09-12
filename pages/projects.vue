@@ -58,6 +58,13 @@
               UI/UX
             </button>
             <button 
+              @click="filterProjects('mobile')"
+              :class="activeFilter === 'mobile' ? 'bg-gradient-to-r from-green-500 to-green-600 text-white' : 'bg-slate-800 bg-opacity-50 backdrop-blur-sm text-slate-300 hover:text-white border border-slate-700 hover:border-green-500'"
+              class="px-6 py-3 rounded-2xl font-medium transition-all duration-300 shadow-lg"
+            >
+              Mobile
+            </button>
+            <button 
               @click="filterProjects('ai')"
               :class="activeFilter === 'ai' ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white' : 'bg-slate-800 bg-opacity-50 backdrop-blur-sm text-slate-300 hover:text-white border border-slate-700 hover:border-purple-500'"
               class="px-6 py-3 rounded-2xl font-medium transition-all duration-300 shadow-lg"
@@ -241,16 +248,16 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Projet Rhizome - IA & Écologie',
-    description: 'Pilotage d\'un projet innovant liant intelligence artificielle et écologie, en mode agile avec une équipe de 5 personnes.',
-    category: 'IA',
-    categoryColor: 'bg-purple-100 text-purple-800',
-    iconBg: 'bg-gradient-to-br from-purple-400 to-purple-600',
-    technologies: ['Nuxt.js', 'HTML', 'CSS', 'JS', 'Figma'],
-    icon: '🤖',
+    title: 'Greens App - Projet Rhizome',
+    description: 'Application Flutter innovante dédiée à l\'écologie avec chatbot IA Dialogflow, gestion des favoris et calcul d\'empreinte carbone.',
+    category: 'Mobile',
+    categoryColor: 'bg-green-100 text-green-800',
+    iconBg: 'bg-gradient-to-br from-green-400 to-green-600',
+    technologies: ['Flutter', 'Dart', 'Firebase', 'Dialogflow', 'Node.js'],
+    icon: '🌱',
     demoUrl: '#',
-    githubUrl: '#',
-    type: 'ai'
+    githubUrl: 'https://github.com/NamAngeM/greens_app',
+    type: 'mobile'
   },
   {
     id: 4,

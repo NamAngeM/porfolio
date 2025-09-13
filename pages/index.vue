@@ -60,26 +60,61 @@
               <!-- Description avec animation de révélation par mots -->
               <div class="animate-fade-in-up" style="animation-delay: 1s">
                 <p class="text-lg text-slate-300 leading-relaxed max-w-2xl">
-                  <span class="animate-word-reveal" style="animation-delay: 1.2s">Développeur </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.3s">avec </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 1.4s">3+ </span>
-                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 1.5s">années </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.6s">d'expérience </span>
-                  <span class="animate-word-reveal" style="animation-delay: 1.7s">en </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.2s">Étudiant </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.3s">en </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 1.4s">management </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 1.5s">de </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 1.6s">projet </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 1.7s">digital</span>,
                   <br class="hidden sm:block">
-                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 1.8s">développement </span>
-                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 1.9s">web </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2s">et </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.1s">gestion </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.2s">de </span>
-                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.3s">projet</span>.
+                  <span class="animate-word-reveal" style="animation-delay: 1.8s">avec </span>
+                  <span class="animate-word-reveal" style="animation-delay: 1.9s">une </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2s">solide </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.1s">expérience </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 2.2s">opérationnelle </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.3s">et </span>
                   <br class="hidden sm:block">
-                  <span class="animate-word-reveal" style="animation-delay: 2.4s">Spécialisé </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.5s">en </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.6s">Nuxt.js, </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.7s">Flutter </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.8s">et </span>
-                  <span class="animate-word-reveal" style="animation-delay: 2.9s">IA</span>.
+                  <span class="animate-word-reveal" style="animation-delay: 2.4s">un </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.5s">intérêt </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.6s">marqué </span>
+                  <span class="animate-word-reveal" style="animation-delay: 2.7s">pour </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.8s">le </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 2.9s">développement </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 3s">web</span>.
+                  <br class="hidden sm:block">
+                  <span class="animate-word-reveal" style="animation-delay: 3.1s">Je </span>
+                  <span class="animate-word-reveal" style="animation-delay: 3.2s">combine </span>
+                  <span class="animate-word-reveal" style="animation-delay: 3.3s">une </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 3.4s">expertise </span>
+                  <span class="animate-word-reveal" style="animation-delay: 3.5s">en </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 3.6s">coordination </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 3.7s">d'équipe </span>
+                  <span class="animate-word-reveal" style="animation-delay: 3.8s">et </span>
+                  <br class="hidden sm:block">
+                  <span class="animate-word-reveal" style="animation-delay: 3.9s">en </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 4s">conception </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 4.1s">UX/UI </span>
+                  <span class="animate-word-reveal" style="animation-delay: 4.2s">avec </span>
+                  <span class="animate-word-reveal" style="animation-delay: 4.3s">une </span>
+                  <br class="hidden sm:block">
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 4.4s">aptitude </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 4.5s">technique </span>
+                  <span class="animate-word-reveal" style="animation-delay: 4.6s">me </span>
+                  <span class="animate-word-reveal" style="animation-delay: 4.7s">permettant </span>
+                  <span class="animate-word-reveal" style="animation-delay: 4.8s">de </span>
+                  <br class="hidden sm:block">
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 4.9s">collaborer </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 5s">efficacement </span>
+                  <span class="animate-word-reveal" style="animation-delay: 5.1s">avec </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 5.2s">les </span>
+                  <span class="font-semibold text-purple-400 animate-word-reveal" style="animation-delay: 5.3s">développeurs </span>
+                  <span class="animate-word-reveal" style="animation-delay: 5.4s">et </span>
+                  <br class="hidden sm:block">
+                  <span class="animate-word-reveal" style="animation-delay: 5.5s">de </span>
+                  <span class="font-semibold text-primary-400 animate-word-reveal" style="animation-delay: 5.6s">comprendre </span>
+                  <span class="animate-word-reveal" style="animation-delay: 5.7s">les </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 5.8s">enjeux </span>
+                  <span class="font-semibold text-blue-400 animate-word-reveal" style="animation-delay: 5.9s">techniques</span>.
                 </p>
                 
                 <!-- Badges de compétences clés avec niveaux -->

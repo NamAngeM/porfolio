@@ -1,0 +1,3382 @@
+{
+    "name": "Import CSV Lucca VF",
+    "flow": [
+        {
+            "id": 3,
+            "module": "microsoft-sharepoint:watchFilesFolders",
+            "version": 1,
+            "parameters": {
+                "site": "odetec24.sharepoint.com,da5929f1-eedd-4911-a1a1-b72822c68862,351e0303-e851-4553-9ae3-dc8293b160c0",
+                "drive": "b!8SlZ2t3uEUmhobcoIsaIYgMDHjVR6FNFmuPcgpOxYMDhn0BEfLwHT6noyS213zdu",
+                "limit": 1,
+                "choose": "create",
+                "folder": "/01VNGXJSNGSN7GCFIPXNC2P4KN42G6567I/01VNGXJSIO4SBLV4B5M5F2ZWBG2ZA4QVSA",
+                "search": "",
+                "itemType": "file",
+                "__IMTCONN__": 6044793
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 150
+                },
+                "restore": {
+                    "parameters": {
+                        "drive": {
+                            "label": "Documents (documentLibrary)"
+                        },
+                        "choose": {
+                            "label": "By Created Time"
+                        },
+                        "folder": {
+                            "path": [
+                                "TRANSFERTS AUTO",
+                                "Import Lucca"
+                            ]
+                        },
+                        "itemType": {
+                            "label": "File"
+                        },
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "azure"
+                            },
+                            "label": "Compte Microsoft de Léonard (Léonard <leonard@odetec.fr>)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:azure",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "choose",
+                        "type": "select",
+                        "label": "Watch Files/Folders",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "create",
+                                "update"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "site",
+                        "type": "text",
+                        "label": "Site ID",
+                        "required": true
+                    },
+                    {
+                        "name": "itemType",
+                        "type": "select",
+                        "label": "Choose an Item Type",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "file",
+                                "folder",
+                                "both"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "type": "uinteger",
+                        "label": "Limit",
+                        "required": true
+                    },
+                    {
+                        "name": "drive",
+                        "type": "select",
+                        "label": "Drive ID",
+                        "required": true
+                    },
+                    {
+                        "name": "folder",
+                        "type": "folder",
+                        "label": "Folder"
+                    },
+                    {
+                        "name": "search",
+                        "type": "text",
+                        "label": "Query Search"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "module": "microsoft-sharepoint:downloadAFile",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 6044793
+            },
+            "mapper": {
+                "file": "{{3.id}}",
+                "site": "odetec24.sharepoint.com,da5929f1-eedd-4911-a1a1-b72822c68862,351e0303-e851-4553-9ae3-dc8293b160c0",
+                "drive": "{{3.parentReference.driveId}}",
+                "enter": "id",
+                "choose": "map",
+                "format": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 150
+                },
+                "restore": {
+                    "expect": {
+                        "enter": {
+                            "label": "File ID"
+                        },
+                        "choose": {
+                            "label": "Enter manually"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "azure"
+                            },
+                            "label": "Compte Microsoft de Léonard (Léonard <leonard@odetec.fr>)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:azure",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "enter",
+                        "type": "select",
+                        "label": "Enter (File ID & File Path)",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "id",
+                                "path"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "type": "boolean",
+                        "label": "Convert to PDF",
+                        "required": true
+                    },
+                    {
+                        "name": "choose",
+                        "type": "select",
+                        "label": "Enter a File ID",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "map",
+                                "list"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "site",
+                        "type": "text",
+                        "label": "Site ID",
+                        "required": true
+                    },
+                    {
+                        "name": "drive",
+                        "type": "text",
+                        "label": "Drive ID",
+                        "required": true
+                    },
+                    {
+                        "name": "file",
+                        "type": "text",
+                        "label": "File ID",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "module": "csv:ParseCSV",
+            "version": 1,
+            "parameters": {
+                "relax": false,
+                "colCount": null,
+                "delimiter": ";",
+                "csvHeaders": "LEGAL_ENTITY;DEPARTEMENT;LAST_NAME;FIRST_NAME;REQUEST_STATUS;ACCOUNT_NAME;ACCOUNT_UNIT;START_DATE;END_DATE;DURATION",
+                "delimiterType": "other",
+                "csvContainsHeaders": true
+            },
+            "mapper": {
+                "csv": "{{toString(8.data)}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 150
+                },
+                "restore": {
+                    "parameters": {
+                        "delimiterType": {
+                            "label": "Other"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "colCount",
+                        "type": "number",
+                        "label": "Number of columns"
+                    },
+                    {
+                        "name": "csvContainsHeaders",
+                        "type": "boolean",
+                        "label": "CSV contains headers",
+                        "required": true
+                    },
+                    {
+                        "name": "delimiterType",
+                        "type": "select",
+                        "label": "Delimiter",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                ",",
+                                "\t",
+                                "other"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "relax",
+                        "type": "boolean",
+                        "label": "Preserve quotes inside unquoted field",
+                        "required": true
+                    },
+                    {
+                        "name": "csvHeaders",
+                        "type": "text",
+                        "label": "CSV headers (recommended)"
+                    },
+                    {
+                        "name": "delimiter",
+                        "type": "text",
+                        "label": "Delimiter character",
+                        "required": true,
+                        "validate": {
+                            "max": 1,
+                            "min": 1
+                        }
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "csv",
+                        "type": "text",
+                        "label": "CSV",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "col1",
+                        "type": "text",
+                        "label": "LEGAL_ENTITY"
+                    },
+                    {
+                        "name": "col2",
+                        "type": "text",
+                        "label": "DEPARTEMENT"
+                    },
+                    {
+                        "name": "col3",
+                        "type": "text",
+                        "label": "LAST_NAME"
+                    },
+                    {
+                        "name": "col4",
+                        "type": "text",
+                        "label": "FIRST_NAME"
+                    },
+                    {
+                        "name": "col5",
+                        "type": "text",
+                        "label": "REQUEST_STATUS"
+                    },
+                    {
+                        "name": "col6",
+                        "type": "text",
+                        "label": "ACCOUNT_NAME"
+                    },
+                    {
+                        "name": "col7",
+                        "type": "text",
+                        "label": "ACCOUNT_UNIT"
+                    },
+                    {
+                        "name": "col8",
+                        "type": "text",
+                        "label": "START_DATE"
+                    },
+                    {
+                        "name": "col9",
+                        "type": "text",
+                        "label": "END_DATE"
+                    },
+                    {
+                        "name": "col10",
+                        "type": "text",
+                        "label": "DURATION"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 81,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 9
+            },
+            "mapper": {
+                "col1": "{{9.col1}}",
+                "col2": "{{9.col2}}",
+                "col3": "{{9.col3}}",
+                "col4": "{{9.col4}}",
+                "col5": "{{9.col5}}",
+                "col6": "{{9.col6}}",
+                "col7": "{{9.col7}}",
+                "col8": "{{9.col8}}",
+                "col9": "{{9.col9}}",
+                "col10": "{{9.col10}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 150,
+                    "name": "Agréger lignes CSV"
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "CSV - Parse CSV [9]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 39,
+            "module": "notion:searchObjects1",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 6333834
+            },
+            "mapper": {
+                "limit": "500",
+                "select": "data_source_item",
+                "data_source": "3350cca8-2eac-80c3-a1ac-000b4d56f609"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1200,
+                    "y": 150,
+                    "name": "Scan base import lucca"
+                },
+                "restore": {
+                    "expect": {
+                        "sorts": {
+                            "mode": "chose"
+                        },
+                        "select": {
+                            "label": "Data Source ItemsThis must be used if your database has multiple data sources."
+                        },
+                        "data_source": {
+                            "rpcSearch": {
+                                "label": "Import Lucca",
+                                "value": "3350cca8-2eac-80c3-a1ac-000b4d56f609"
+                            }
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "notion2"
+                            },
+                            "label": "Lucca (ODETEC)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:notion2,notion3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Search Objects",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "data_source_item",
+                                "data_source",
+                                "page",
+                                "item",
+                                "database"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "type": "uinteger",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "data_source",
+                        "type": "text",
+                        "label": "Data source ID",
+                        "required": true
+                    },
+                    {
+                        "name": "filter",
+                        "type": "filter",
+                        "label": "Filter",
+                        "options": {
+                            "store": [
+                                {
+                                    "label": "Motif (Rich text)",
+                                    "value": "Motif |&*^%$#@| rich_text"
+                                },
+                                {
+                                    "label": "Date fin (Date)",
+                                    "value": "Date fin |&*^%$#@| date"
+                                },
+                                {
+                                    "label": "Date début (Date)",
+                                    "value": "Date début |&*^%$#@| date"
+                                },
+                                {
+                                    "label": "Cle (Rich text)",
+                                    "value": "Cle |&*^%$#@| rich_text"
+                                },
+                                {
+                                    "label": "Unité (Rich text)",
+                                    "value": "Unité |&*^%$#@| rich_text"
+                                },
+                                {
+                                    "label": "Suivi des heures (Relation)",
+                                    "value": "Suivi des heures |&*^%$#@| relation"
+                                },
+                                {
+                                    "label": "Nb de jours (Number)",
+                                    "value": "Nb de jours |&*^%$#@| number"
+                                },
+                                {
+                                    "label": "Collaborateur (Title)",
+                                    "value": "Collaborateur |&*^%$#@| title"
+                                }
+                            ],
+                            "operators": [
+                                {
+                                    "label": "Text",
+                                    "options": [
+                                        {
+                                            "label": "Equals",
+                                            "value": "text:equals"
+                                        },
+                                        {
+                                            "label": "Does not equal",
+                                            "value": "text:does_not_equal"
+                                        },
+                                        {
+                                            "label": "Contains",
+                                            "value": "text:contains"
+                                        },
+                                        {
+                                            "label": "Does not contain",
+                                            "value": "text:does_not_contain"
+                                        },
+                                        {
+                                            "label": "Starts with",
+                                            "value": "text:starts_with"
+                                        },
+                                        {
+                                            "label": "Ends with",
+                                            "value": "text:ends_with"
+                                        },
+                                        {
+                                            "label": "Is empty (Boolean)",
+                                            "value": "text:is_empty"
+                                        },
+                                        {
+                                            "label": "Is not empty (boolean)",
+                                            "value": "text:is_not_empty"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Number",
+                                    "options": [
+                                        {
+                                            "label": "Equals",
+                                            "value": "number:equals"
+                                        },
+                                        {
+                                            "label": "Does not equal",
+                                            "value": "number:does_not_equal"
+                                        },
+                                        {
+                                            "label": "Greater than",
+                                            "value": "number:greater_than"
+                                        },
+                                        {
+                                            "label": "Less than",
+                                            "value": "number:less_than"
+                                        },
+                                        {
+                                            "label": "Greater than or equal to",
+                                            "value": "number:greater_than_or_equal_to"
+                                        },
+                                        {
+                                            "label": "Less than or equal to",
+                                            "value": "number:less_than_or_equal_to"
+                                        },
+                                        {
+                                            "label": "Is empty (Boolean)",
+                                            "value": "number:is_empty"
+                                        },
+                                        {
+                                            "label": "Is not empty (boolean)",
+                                            "value": "number:is_not_empty"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Date",
+                                    "options": [
+                                        {
+                                            "label": "Equals",
+                                            "value": "date:equals"
+                                        },
+                                        {
+                                            "label": "Before",
+                                            "value": "date:before"
+                                        },
+                                        {
+                                            "label": "After",
+                                            "value": "date:after"
+                                        },
+                                        {
+                                            "label": "On or before",
+                                            "value": "date:on_or_before"
+                                        },
+                                        {
+                                            "label": "On or after",
+                                            "value": "date:on_or_after"
+                                        },
+                                        {
+                                            "label": "Is empty (Boolean)",
+                                            "value": "date:is_empty"
+                                        },
+                                        {
+                                            "label": "Is not empty (boolean)",
+                                            "value": "date:is_not_empty"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Checkbox",
+                                    "options": [
+                                        {
+                                            "label": "Equals",
+                                            "value": "checkbox:equals"
+                                        },
+                                        {
+                                            "label": "Does not equal",
+                                            "value": "checkbox:does_not_equal"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "File",
+                                    "options": [
+                                        {
+                                            "label": "Is empty",
+                                            "value": "file:is_empty"
+                                        },
+                                        {
+                                            "label": "Is not empty",
+                                            "value": "file:is_not_empty"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Select",
+                                    "options": [
+                                        {
+                                            "label": "Equals",
+                                            "value": "select:equals"
+                                        },
+                                        {
+                                            "label": "Does not equal",
+                                            "value": "select:does_not_equal"
+                                        },
+                                        {
+                                            "label": "Is empty (Boolean)",
+                                            "value": "select:is_empty"
+                                        },
+                                        {
+                                            "label": "Is not empty (boolean)",
+                                            "value": "select:is_not_empty"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Multi-select",
+                                    "options": [
+                                        {
+                                            "label": "Contains",
+                                            "value": "multiselect:contains"
+                                        },
+                                        {
+                                            "label": "Does not contain",
+                                            "value": "multiselect:does_not_contain"
+                                        },
+                                        {
+                                            "label": "Is empty (Boolean)",
+                                            "value": "multiselect:is_empty"
+                                        },
+                                        {
+                                            "label": "Is not empty (boolean)",
+                                            "value": "multiselect:is_not_empty"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "People",
+                                    "options": [
+                                        {
+                                            "label": "Contains",
+                                            "value": "people:contains"
+                                        },
+                                        {
+                                            "label": "Does not contain",
+                                            "value": "people:does_not_contain"
+                                        },
+                                        {
+                                            "label": "Is empty (Boolean)",
+                                            "value": "people:is_empty"
+                                        },
+                                        {
+                                            "label": "Is not empty (boolean)",
+                                            "value": "people:is_not_empty"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Relation",
+                                    "options": [
+                                        {
+                                            "label": "Contains",
+                                            "value": "relation:contains"
+                                        },
+                                        {
+                                            "label": "Does not contain",
+                                            "value": "relation:does_not_contain"
+                                        },
+                                        {
+                                            "label": "Is empty (Boolean)",
+                                            "value": "relation:is_empty"
+                                        },
+                                        {
+                                            "label": "Is not empty (boolean)",
+                                            "value": "relation:is_not_empty"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Formula",
+                                    "options": [
+                                        {
+                                            "label": "String - Equals",
+                                            "value": "formula:text-equals"
+                                        },
+                                        {
+                                            "label": "String - Does not equal",
+                                            "value": "formula:text-does_not_equal"
+                                        },
+                                        {
+                                            "label": "String - Contains",
+                                            "value": "formula:text-contains"
+                                        },
+                                        {
+                                            "label": "String - Does not contain",
+                                            "value": "formula:text-does_not_contain"
+                                        },
+                                        {
+                                            "label": "String - Starts with",
+                                            "value": "formula:text-starts_with"
+                                        },
+                                        {
+                                            "label": "String - Ends with",
+                                            "value": "formula:text-ends_with"
+                                        },
+                                        {
+                                            "label": "String - Is empty (Boolean)",
+                                            "value": "formula:text-is_empty"
+                                        },
+                                        {
+                                            "label": "Text - Is not empty (boolean)",
+                                            "value": "formula:text-is_not_empty"
+                                        },
+                                        {
+                                            "label": "Checkbox - Equals",
+                                            "value": "formula:checkbox-equals"
+                                        },
+                                        {
+                                            "label": "Checkbox - Does not equal",
+                                            "value": "formula:checkbox-does_not_equal"
+                                        },
+                                        {
+                                            "label": "Number - Equals",
+                                            "value": "formula:number-equals"
+                                        },
+                                        {
+                                            "label": "Number - Does not equal",
+                                            "value": "formula:number-does_not_equal"
+                                        },
+                                        {
+                                            "label": "Number - Greater than",
+                                            "value": "formula:number-greater_than"
+                                        },
+                                        {
+                                            "label": "Number - Less than",
+                                            "value": "formula:number-less_than"
+                                        },
+                                        {
+                                            "label": "Number - Greater than or equal to",
+                                            "value": "formula:number-greater_than_or_equal_to"
+                                        },
+                                        {
+                                            "label": "Number - Less than or equal to",
+                                            "value": "formula:number-less_than_or_equal_to"
+                                        },
+                                        {
+                                            "label": "Number - Is empty (Boolean)",
+                                            "value": "formula:number-is_empty"
+                                        },
+                                        {
+                                            "label": "Number - Is not empty (boolean)",
+                                            "value": "formula:number-is_not_empty"
+                                        },
+                                        {
+                                            "label": "Date - Equals",
+                                            "value": "formula:date-equals"
+                                        },
+                                        {
+                                            "label": "Date - before",
+                                            "value": "formula:date-before"
+                                        },
+                                        {
+                                            "label": "Date - after",
+                                            "value": "formula:date-after"
+                                        },
+                                        {
+                                            "label": "Date - On or before",
+                                            "value": "formula:date-on_or_before"
+                                        },
+                                        {
+                                            "label": "Date - On or after",
+                                            "value": "formula:date-on_or_after"
+                                        },
+                                        {
+                                            "label": "Date - Is empty (Boolean)",
+                                            "value": "formula:date-is_empty"
+                                        },
+                                        {
+                                            "label": "Date - Is not empty (boolean)",
+                                            "value": "formula:date-is_not_empty"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "sorts",
+                        "spec": [
+                            {
+                                "name": "select",
+                                "type": "select",
+                                "label": "Select a Field to Sort",
+                                "options": [
+                                    {
+                                        "label": "Property Field",
+                                        "value": "property",
+                                        "nested": [
+                                            {
+                                                "name": "property",
+                                                "type": "select",
+                                                "label": "Property Field",
+                                                "options": "rpc://notion/1/listDatabasePropertiesFieldsForFilter?sortParameter=true",
+                                                "required": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "label": "Timestamp",
+                                        "value": "timestamp",
+                                        "nested": [
+                                            {
+                                                "name": "timestamp",
+                                                "type": "select",
+                                                "label": "Timestamp",
+                                                "options": [
+                                                    {
+                                                        "label": "Created time",
+                                                        "value": "created_time",
+                                                        "default": true
+                                                    },
+                                                    {
+                                                        "label": "Last edited time",
+                                                        "value": "last_edited_time"
+                                                    }
+                                                ],
+                                                "required": true
+                                            }
+                                        ],
+                                        "default": true
+                                    }
+                                ],
+                                "required": true
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Ascending",
+                                        "value": "ascending"
+                                    },
+                                    {
+                                        "label": "Descending",
+                                        "value": "descending"
+                                    }
+                                ],
+                                "required": true
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Sorts"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "type": "uinteger",
+                        "label": "Total number of bundles"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "type": "uinteger",
+                        "label": "Bundle order position"
+                    },
+                    {
+                        "name": "object",
+                        "type": "text",
+                        "label": "Object"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "Page ID"
+                    },
+                    {
+                        "name": "created_time",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "last_edited_time",
+                        "type": "date",
+                        "label": "Last Edited Time"
+                    },
+                    {
+                        "name": "created_by",
+                        "spec": [
+                            {
+                                "name": "object",
+                                "type": "text",
+                                "label": "Object"
+                            },
+                            {
+                                "name": "id",
+                                "type": "uuid",
+                                "label": "ID"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Created by"
+                    },
+                    {
+                        "name": "last_edited_by",
+                        "spec": [
+                            {
+                                "name": "object",
+                                "type": "text",
+                                "label": "Object"
+                            },
+                            {
+                                "name": "id",
+                                "type": "uuid",
+                                "label": "ID"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Last Edited by"
+                    },
+                    {
+                        "name": "icon",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "emoji",
+                                "type": "text",
+                                "label": "Emoji"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Icon"
+                    },
+                    {
+                        "name": "cover",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "external",
+                                "spec": [
+                                    {
+                                        "name": "url",
+                                        "type": "text",
+                                        "label": "URL"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "External"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Cover"
+                    },
+                    {
+                        "name": "url",
+                        "type": "text",
+                        "label": "URL"
+                    },
+                    {
+                        "name": "parent",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "workspace",
+                                "type": "boolean",
+                                "label": "Workspace"
+                            },
+                            {
+                                "name": "page_id",
+                                "type": "text",
+                                "label": "Page ID"
+                            },
+                            {
+                                "name": "database_id",
+                                "type": "text",
+                                "label": "Database ID"
+                            },
+                            {
+                                "name": "data_source_id",
+                                "type": "text",
+                                "label": "Data Source ID"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Parent"
+                    },
+                    {
+                        "name": "properties",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "id",
+                                    "type": "text",
+                                    "label": "ID"
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "text",
+                                    "label": "Type"
+                                },
+                                {
+                                    "name": "people",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "object",
+                                                "type": "text",
+                                                "label": "Object"
+                                            },
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "ID"
+                                            },
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name"
+                                            },
+                                            {
+                                                "name": "avatar_url",
+                                                "type": "text",
+                                                "label": "Avatar Url"
+                                            },
+                                            {
+                                                "name": "type",
+                                                "type": "text",
+                                                "label": "Type"
+                                            },
+                                            {
+                                                "name": "person",
+                                                "spec": [
+                                                    {
+                                                        "name": "email",
+                                                        "type": "text",
+                                                        "label": "Email"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Person"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "People"
+                                },
+                                {
+                                    "name": "url",
+                                    "type": "text",
+                                    "label": "URL"
+                                },
+                                {
+                                    "name": "text",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "type",
+                                                "type": "text",
+                                                "label": "Type"
+                                            },
+                                            {
+                                                "name": "text",
+                                                "spec": [
+                                                    {
+                                                        "name": "content",
+                                                        "type": "text",
+                                                        "label": "Content"
+                                                    },
+                                                    {
+                                                        "name": "link",
+                                                        "type": "text",
+                                                        "label": "Link"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Text"
+                                            },
+                                            {
+                                                "name": "annotations",
+                                                "spec": [
+                                                    {
+                                                        "name": "bold",
+                                                        "type": "boolean",
+                                                        "label": "Bold"
+                                                    },
+                                                    {
+                                                        "name": "italic",
+                                                        "type": "boolean",
+                                                        "label": "Italic"
+                                                    },
+                                                    {
+                                                        "name": "strikethrough",
+                                                        "type": "boolean",
+                                                        "label": "Strikethrough"
+                                                    },
+                                                    {
+                                                        "name": "underline",
+                                                        "type": "boolean",
+                                                        "label": "Underline"
+                                                    },
+                                                    {
+                                                        "name": "code",
+                                                        "type": "boolean",
+                                                        "label": "Code"
+                                                    },
+                                                    {
+                                                        "name": "color",
+                                                        "type": "text",
+                                                        "label": "Color"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Annotations"
+                                            },
+                                            {
+                                                "name": "plain_text",
+                                                "type": "text",
+                                                "label": "Plain Text"
+                                            },
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Href"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Text"
+                                },
+                                {
+                                    "name": "select",
+                                    "spec": [
+                                        {
+                                            "name": "id",
+                                            "type": "text",
+                                            "label": "ID"
+                                        },
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "label": "Name"
+                                        },
+                                        {
+                                            "name": "color",
+                                            "type": "text",
+                                            "label": "Color"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Select"
+                                },
+                                {
+                                    "name": "email",
+                                    "type": "text",
+                                    "label": "Email"
+                                },
+                                {
+                                    "name": "phone_number",
+                                    "type": "text",
+                                    "label": "Phone Number"
+                                },
+                                {
+                                    "name": "multi_select",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "ID"
+                                            },
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Multi Select"
+                                },
+                                {
+                                    "name": "date",
+                                    "spec": [
+                                        {
+                                            "name": "start",
+                                            "type": "text",
+                                            "label": "Start"
+                                        },
+                                        {
+                                            "name": "end",
+                                            "type": "text",
+                                            "label": "End"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Date"
+                                },
+                                {
+                                    "name": "checkbox",
+                                    "type": "boolean",
+                                    "label": "Checkbox"
+                                },
+                                {
+                                    "name": "number",
+                                    "type": "number",
+                                    "label": "Number"
+                                },
+                                {
+                                    "name": "files",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Files"
+                                },
+                                {
+                                    "name": "title",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "type",
+                                                "type": "text",
+                                                "label": "Type"
+                                            },
+                                            {
+                                                "name": "text",
+                                                "spec": [
+                                                    {
+                                                        "name": "content",
+                                                        "type": "text",
+                                                        "label": "Content"
+                                                    },
+                                                    {
+                                                        "name": "link",
+                                                        "type": "text",
+                                                        "label": "Link"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Text"
+                                            },
+                                            {
+                                                "name": "annotations",
+                                                "spec": [
+                                                    {
+                                                        "name": "bold",
+                                                        "type": "boolean",
+                                                        "label": "Bold"
+                                                    },
+                                                    {
+                                                        "name": "italic",
+                                                        "type": "boolean",
+                                                        "label": "Italic"
+                                                    },
+                                                    {
+                                                        "name": "strikethrough",
+                                                        "type": "boolean",
+                                                        "label": "Strikethrough"
+                                                    },
+                                                    {
+                                                        "name": "underline",
+                                                        "type": "boolean",
+                                                        "label": "Underline"
+                                                    },
+                                                    {
+                                                        "name": "code",
+                                                        "type": "boolean",
+                                                        "label": "Code"
+                                                    },
+                                                    {
+                                                        "name": "color",
+                                                        "type": "text",
+                                                        "label": "Color"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Annotations"
+                                            },
+                                            {
+                                                "name": "plain_text",
+                                                "type": "text",
+                                                "label": "Plain Text"
+                                            },
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Href"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Title"
+                                },
+                                {
+                                    "name": "last_edited_time",
+                                    "time": true,
+                                    "type": "date",
+                                    "label": "Last Edited Time"
+                                },
+                                {
+                                    "name": "created_time",
+                                    "time": true,
+                                    "type": "date",
+                                    "label": "Created Time"
+                                },
+                                {
+                                    "name": "last_edited_by",
+                                    "spec": [
+                                        {
+                                            "name": "object",
+                                            "type": "text",
+                                            "label": "Object"
+                                        },
+                                        {
+                                            "name": "id",
+                                            "type": "text",
+                                            "label": "ID"
+                                        },
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "label": "Name"
+                                        },
+                                        {
+                                            "name": "avatar_url",
+                                            "type": "text",
+                                            "label": "Avatar Url"
+                                        },
+                                        {
+                                            "name": "type",
+                                            "type": "text",
+                                            "label": "Type"
+                                        },
+                                        {
+                                            "name": "person",
+                                            "spec": [
+                                                {
+                                                    "name": "email",
+                                                    "type": "text",
+                                                    "label": "Email"
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Person"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Last Edited By"
+                                },
+                                {
+                                    "name": "created_by",
+                                    "spec": [
+                                        {
+                                            "name": "object",
+                                            "type": "text",
+                                            "label": "Object"
+                                        },
+                                        {
+                                            "name": "id",
+                                            "type": "text",
+                                            "label": "ID"
+                                        },
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "label": "Name"
+                                        },
+                                        {
+                                            "name": "avatar_url",
+                                            "type": "text",
+                                            "label": "Avatar Url"
+                                        },
+                                        {
+                                            "name": "type",
+                                            "type": "text",
+                                            "label": "Type"
+                                        },
+                                        {
+                                            "name": "person",
+                                            "spec": [
+                                                {
+                                                    "name": "email",
+                                                    "type": "text",
+                                                    "label": "Email"
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Person"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Created By"
+                                },
+                                {
+                                    "name": "formula",
+                                    "spec": [
+                                        {
+                                            "name": "type",
+                                            "type": "text",
+                                            "label": "Type"
+                                        },
+                                        {
+                                            "name": "string",
+                                            "type": "text",
+                                            "label": "String"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Formula"
+                                },
+                                {
+                                    "name": "relation",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "ID"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Relation"
+                                },
+                                {
+                                    "name": "label",
+                                    "type": "text",
+                                    "label": "Label"
+                                }
+                            ],
+                            "type": "collection"
+                        },
+                        "type": "array",
+                        "label": "Properties"
+                    },
+                    {
+                        "name": "public_url",
+                        "type": "text",
+                        "label": "Public URL"
+                    },
+                    {
+                        "name": "archived",
+                        "type": "boolean",
+                        "label": "Archived"
+                    },
+                    {
+                        "name": "in_trash",
+                        "type": "boolean",
+                        "label": "In Trash"
+                    },
+                    {
+                        "name": "properties_value",
+                        "spec": [
+                            {
+                                "name": "Motif",
+                                "spec": [
+                                    {
+                                        "name": "type",
+                                        "type": "text",
+                                        "label": "Type"
+                                    },
+                                    {
+                                        "name": "text",
+                                        "spec": [
+                                            {
+                                                "name": "content",
+                                                "type": "text",
+                                                "label": "Content"
+                                            },
+                                            {
+                                                "name": "link",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "annotations",
+                                        "spec": [
+                                            {
+                                                "name": "bold",
+                                                "type": "boolean",
+                                                "label": "Bold"
+                                            },
+                                            {
+                                                "name": "italic",
+                                                "type": "boolean",
+                                                "label": "Italic"
+                                            },
+                                            {
+                                                "name": "strikethrough",
+                                                "type": "boolean",
+                                                "label": "Strikethrough"
+                                            },
+                                            {
+                                                "name": "underline",
+                                                "type": "boolean",
+                                                "label": "Underline"
+                                            },
+                                            {
+                                                "name": "code",
+                                                "type": "boolean",
+                                                "label": "Code"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Annotations"
+                                    },
+                                    {
+                                        "name": "plain_text",
+                                        "type": "text",
+                                        "label": "Plain Text"
+                                    },
+                                    {
+                                        "name": "href",
+                                        "type": "text",
+                                        "label": "Href"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Motif"
+                            },
+                            {
+                                "name": "Date fin",
+                                "spec": [
+                                    {
+                                        "name": "start",
+                                        "type": "date",
+                                        "label": "Start"
+                                    },
+                                    {
+                                        "name": "end",
+                                        "type": "date",
+                                        "label": "End"
+                                    },
+                                    {
+                                        "name": "time_zone",
+                                        "type": "text",
+                                        "label": "Time Zone"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Date fin"
+                            },
+                            {
+                                "name": "Date début",
+                                "spec": [
+                                    {
+                                        "name": "start",
+                                        "type": "date",
+                                        "label": "Start"
+                                    },
+                                    {
+                                        "name": "end",
+                                        "type": "date",
+                                        "label": "End"
+                                    },
+                                    {
+                                        "name": "time_zone",
+                                        "type": "text",
+                                        "label": "Time Zone"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Date début"
+                            },
+                            {
+                                "name": "Cle",
+                                "spec": [
+                                    {
+                                        "name": "type",
+                                        "type": "text",
+                                        "label": "Type"
+                                    },
+                                    {
+                                        "name": "text",
+                                        "spec": [
+                                            {
+                                                "name": "content",
+                                                "type": "text",
+                                                "label": "Content"
+                                            },
+                                            {
+                                                "name": "link",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "annotations",
+                                        "spec": [
+                                            {
+                                                "name": "bold",
+                                                "type": "boolean",
+                                                "label": "Bold"
+                                            },
+                                            {
+                                                "name": "italic",
+                                                "type": "boolean",
+                                                "label": "Italic"
+                                            },
+                                            {
+                                                "name": "strikethrough",
+                                                "type": "boolean",
+                                                "label": "Strikethrough"
+                                            },
+                                            {
+                                                "name": "underline",
+                                                "type": "boolean",
+                                                "label": "Underline"
+                                            },
+                                            {
+                                                "name": "code",
+                                                "type": "boolean",
+                                                "label": "Code"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Annotations"
+                                    },
+                                    {
+                                        "name": "plain_text",
+                                        "type": "text",
+                                        "label": "Plain Text"
+                                    },
+                                    {
+                                        "name": "href",
+                                        "type": "text",
+                                        "label": "Href"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Cle"
+                            },
+                            {
+                                "name": "Unité",
+                                "spec": [
+                                    {
+                                        "name": "type",
+                                        "type": "text",
+                                        "label": "Type"
+                                    },
+                                    {
+                                        "name": "text",
+                                        "spec": [
+                                            {
+                                                "name": "content",
+                                                "type": "text",
+                                                "label": "Content"
+                                            },
+                                            {
+                                                "name": "link",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "annotations",
+                                        "spec": [
+                                            {
+                                                "name": "bold",
+                                                "type": "boolean",
+                                                "label": "Bold"
+                                            },
+                                            {
+                                                "name": "italic",
+                                                "type": "boolean",
+                                                "label": "Italic"
+                                            },
+                                            {
+                                                "name": "strikethrough",
+                                                "type": "boolean",
+                                                "label": "Strikethrough"
+                                            },
+                                            {
+                                                "name": "underline",
+                                                "type": "boolean",
+                                                "label": "Underline"
+                                            },
+                                            {
+                                                "name": "code",
+                                                "type": "boolean",
+                                                "label": "Code"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Annotations"
+                                    },
+                                    {
+                                        "name": "plain_text",
+                                        "type": "text",
+                                        "label": "Plain Text"
+                                    },
+                                    {
+                                        "name": "href",
+                                        "type": "text",
+                                        "label": "Href"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Unité"
+                            },
+                            {
+                                "name": "Suivi des heures",
+                                "spec": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "ID"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Suivi des heures"
+                            },
+                            {
+                                "name": "Nb de jours",
+                                "type": "number",
+                                "label": "Nb de jours"
+                            },
+                            {
+                                "name": "Collaborateur",
+                                "spec": [
+                                    {
+                                        "name": "type",
+                                        "type": "text",
+                                        "label": "Type"
+                                    },
+                                    {
+                                        "name": "text",
+                                        "spec": [
+                                            {
+                                                "name": "content",
+                                                "type": "text",
+                                                "label": "Content"
+                                            },
+                                            {
+                                                "name": "link",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "annotations",
+                                        "spec": [
+                                            {
+                                                "name": "bold",
+                                                "type": "boolean",
+                                                "label": "Bold"
+                                            },
+                                            {
+                                                "name": "italic",
+                                                "type": "boolean",
+                                                "label": "Italic"
+                                            },
+                                            {
+                                                "name": "strikethrough",
+                                                "type": "boolean",
+                                                "label": "Strikethrough"
+                                            },
+                                            {
+                                                "name": "underline",
+                                                "type": "boolean",
+                                                "label": "Underline"
+                                            },
+                                            {
+                                                "name": "code",
+                                                "type": "boolean",
+                                                "label": "Code"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Annotations"
+                                    },
+                                    {
+                                        "name": "plain_text",
+                                        "type": "text",
+                                        "label": "Plain Text"
+                                    },
+                                    {
+                                        "name": "href",
+                                        "type": "text",
+                                        "label": "Href"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Collaborateur"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Properties Value"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 38,
+            "module": "notion:makeApiCall",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 6333834
+            },
+            "mapper": {
+                "url": "/v1/pages/{{39.id}}",
+                "body": "{\r\n  \"in_trash\": true\r\n}",
+                "method": "PATCH",
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "version": "2022-06-28"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1500,
+                    "y": 150,
+                    "name": "Supprimer lignes"
+                },
+                "restore": {
+                    "expect": {
+                        "qs": {
+                            "mode": "chose"
+                        },
+                        "method": {
+                            "mode": "chose",
+                            "label": "PATCH"
+                        },
+                        "headers": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "notion2"
+                            },
+                            "label": "Lucca (ODETEC)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:notion2,notion3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "url",
+                        "type": "text",
+                        "label": "URL",
+                        "required": true
+                    },
+                    {
+                        "name": "version",
+                        "type": "text",
+                        "label": "Notion Version"
+                    },
+                    {
+                        "name": "method",
+                        "type": "select",
+                        "label": "Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "PATCH",
+                                "DELETE"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "headers",
+                        "spec": [
+                            {
+                                "name": "key",
+                                "type": "text",
+                                "label": "Key"
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Headers"
+                    },
+                    {
+                        "name": "qs",
+                        "spec": [
+                            {
+                                "name": "key",
+                                "type": "text",
+                                "label": "Key"
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Query String"
+                    },
+                    {
+                        "name": "body",
+                        "type": "any",
+                        "label": "Body"
+                    }
+                ]
+            },
+            "onerror": [
+                {
+                    "id": 60,
+                    "module": "builtin:Ignore",
+                    "version": 1,
+                    "metadata": {
+                        "designer": {
+                            "x": 1800,
+                            "y": 300
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 39
+            },
+            "mapper": {
+                "statusCode": "{{38.statusCode}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1800,
+                    "y": 0,
+                    "name": "Attendre fin suppression"
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Scan base import lucca - Search Objects [39]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 82,
+            "module": "builtin:BasicFeeder",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "array": "{{81.array}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2100,
+                    "y": 0,
+                    "name": "Itérer sur lignes CSV"
+                },
+                "restore": {
+                    "expect": {
+                        "array": {
+                            "mode": "edit"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "mode": "edit",
+                        "name": "array",
+                        "spec": [],
+                        "type": "array",
+                        "label": "Array"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 50,
+            "module": "notion:createDataSourceItem",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 6333834
+            },
+            "mapper": {
+                "fields": {
+                    "WgLs": {
+                        "start": "{{parseDate(82.col8; \"\"\"DD/MM/YYYY\"\"\")}}",
+                        "includeTime": false
+                    },
+                    "title": "{{82.col3}} {{82.col4}}",
+                    "%3EfRw": "{{82.col6}}",
+                    "DoL%7D": {
+                        "start": "{{parseDate(82.col9; \"\"\"DD/MM/YYYY\"\"\")}}",
+                        "includeTime": false
+                    },
+                    "hm%60X": "{{82.col7}}",
+                    "wK%7DK": "{{replace(82.col10; \",\"; \".\")}}"
+                },
+                "select": "list",
+                "data_source": "3350cca8-2eac-80c3-a1ac-000b4d56f609"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2400,
+                    "y": 0,
+                    "name": "Créer lignes Notion"
+                },
+                "restore": {
+                    "expect": {
+                        "fields": {
+                            "nested": {
+                                "WgLs": {
+                                    "nested": {
+                                        "includeTime": {
+                                            "mode": "chose",
+                                            "label": "No"
+                                        }
+                                    }
+                                },
+                                "DoL%7D": {
+                                    "nested": {
+                                        "includeTime": {
+                                            "mode": "chose",
+                                            "label": "No"
+                                        }
+                                    }
+                                },
+                                "uy%5EH": {
+                                    "mode": "chose"
+                                }
+                            }
+                        },
+                        "select": {
+                            "label": "Specific Fields of Data Source"
+                        },
+                        "data_source": {
+                            "nested": [
+                                {
+                                    "name": "fields",
+                                    "spec": [
+                                        {
+                                            "name": "title",
+                                            "type": "text",
+                                            "label": "Collaborateur",
+                                            "metadata": {
+                                                "type": "title"
+                                            },
+                                            "required": true
+                                        },
+                                        {
+                                            "name": "%3EfRw",
+                                            "type": "text",
+                                            "label": "Motif",
+                                            "metadata": {
+                                                "type": "rich_text"
+                                            }
+                                        },
+                                        {
+                                            "name": "DoL%7D",
+                                            "spec": [
+                                                {
+                                                    "name": "start",
+                                                    "type": "date",
+                                                    "label": "Start Time"
+                                                },
+                                                {
+                                                    "help": "Optional. Use only when entering a date range.",
+                                                    "name": "end",
+                                                    "type": "date",
+                                                    "label": "End Time"
+                                                },
+                                                {
+                                                    "name": "includeTime",
+                                                    "type": "select",
+                                                    "label": "Include Time",
+                                                    "options": [
+                                                        {
+                                                            "label": "Yes",
+                                                            "value": true
+                                                        },
+                                                        {
+                                                            "label": "No",
+                                                            "value": false,
+                                                            "default": true
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Date fin"
+                                        },
+                                        {
+                                            "name": "WgLs",
+                                            "spec": [
+                                                {
+                                                    "name": "start",
+                                                    "type": "date",
+                                                    "label": "Start Time"
+                                                },
+                                                {
+                                                    "help": "Optional. Use only when entering a date range.",
+                                                    "name": "end",
+                                                    "type": "date",
+                                                    "label": "End Time"
+                                                },
+                                                {
+                                                    "name": "includeTime",
+                                                    "type": "select",
+                                                    "label": "Include Time",
+                                                    "options": [
+                                                        {
+                                                            "label": "Yes",
+                                                            "value": true
+                                                        },
+                                                        {
+                                                            "label": "No",
+                                                            "value": false,
+                                                            "default": true
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Date début"
+                                        },
+                                        {
+                                            "name": "fT%40%3B",
+                                            "type": "text",
+                                            "label": "Cle",
+                                            "metadata": {
+                                                "type": "rich_text"
+                                            }
+                                        },
+                                        {
+                                            "name": "hm%60X",
+                                            "type": "text",
+                                            "label": "Unité",
+                                            "metadata": {
+                                                "type": "rich_text"
+                                            }
+                                        },
+                                        {
+                                            "name": "uy%5EH",
+                                            "type": "select",
+                                            "label": "Suivi des heures",
+                                            "options": "rpc://notion/1/listDataSourceItems?data_source=32c0cca8-2eac-8099-ad79-000b1c504625",
+                                            "metadata": {
+                                                "type": "relation"
+                                            },
+                                            "multiple": true
+                                        },
+                                        {
+                                            "name": "wK%7DK",
+                                            "type": "number",
+                                            "label": "Nb de jours",
+                                            "metadata": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Fields"
+                                }
+                            ],
+                            "rpcSearch": {
+                                "label": "Import Lucca",
+                                "value": "3350cca8-2eac-80c3-a1ac-000b4d56f609"
+                            }
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "notion2"
+                            },
+                            "label": "Lucca (ODETEC)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:notion2,notion3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Input method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "map",
+                                "list"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "data_source",
+                        "type": "text",
+                        "label": "Data Source ID",
+                        "required": true
+                    },
+                    {
+                        "name": "fields",
+                        "spec": [
+                            {
+                                "name": "title",
+                                "type": "text",
+                                "label": "Collaborateur",
+                                "metadata": {
+                                    "type": "title"
+                                },
+                                "required": true
+                            },
+                            {
+                                "name": "%3EfRw",
+                                "type": "text",
+                                "label": "Motif",
+                                "metadata": {
+                                    "type": "rich_text"
+                                }
+                            },
+                            {
+                                "name": "DoL%7D",
+                                "spec": [
+                                    {
+                                        "name": "start",
+                                        "type": "date",
+                                        "label": "Start Time"
+                                    },
+                                    {
+                                        "name": "end",
+                                        "type": "date",
+                                        "label": "End Time"
+                                    },
+                                    {
+                                        "name": "includeTime",
+                                        "type": "select",
+                                        "label": "Include Time",
+                                        "validate": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Date fin"
+                            },
+                            {
+                                "name": "WgLs",
+                                "spec": [
+                                    {
+                                        "name": "start",
+                                        "type": "date",
+                                        "label": "Start Time"
+                                    },
+                                    {
+                                        "name": "end",
+                                        "type": "date",
+                                        "label": "End Time"
+                                    },
+                                    {
+                                        "name": "includeTime",
+                                        "type": "select",
+                                        "label": "Include Time",
+                                        "validate": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Date début"
+                            },
+                            {
+                                "name": "fT%40%3B",
+                                "type": "text",
+                                "label": "Cle",
+                                "metadata": {
+                                    "type": "rich_text"
+                                }
+                            },
+                            {
+                                "name": "hm%60X",
+                                "type": "text",
+                                "label": "Unité",
+                                "metadata": {
+                                    "type": "rich_text"
+                                }
+                            },
+                            {
+                                "name": "uy%5EH",
+                                "type": "select",
+                                "label": "Suivi des heures",
+                                "metadata": {
+                                    "type": "relation"
+                                },
+                                "multiple": true
+                            },
+                            {
+                                "name": "wK%7DK",
+                                "type": "number",
+                                "label": "Nb de jours",
+                                "metadata": {
+                                    "type": "number"
+                                }
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Fields"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "object",
+                        "type": "text",
+                        "label": "Object"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "Database Item ID"
+                    },
+                    {
+                        "name": "created_time",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "last_edited_time",
+                        "type": "date",
+                        "label": "Last Edited Time"
+                    },
+                    {
+                        "name": "in_trash",
+                        "type": "boolean",
+                        "label": "In trash"
+                    },
+                    {
+                        "name": "public_url",
+                        "type": "text",
+                        "label": "Public URL"
+                    },
+                    {
+                        "name": "request_id",
+                        "type": "text",
+                        "label": "Request ID"
+                    },
+                    {
+                        "name": "created_by",
+                        "spec": [
+                            {
+                                "name": "object",
+                                "type": "text",
+                                "label": "Object"
+                            },
+                            {
+                                "name": "id",
+                                "type": "uuid",
+                                "label": "ID"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Created by"
+                    },
+                    {
+                        "name": "last_edited_by",
+                        "spec": [
+                            {
+                                "name": "object",
+                                "type": "text",
+                                "label": "Object"
+                            },
+                            {
+                                "name": "id",
+                                "type": "uuid",
+                                "label": "ID"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Last Edited by"
+                    },
+                    {
+                        "name": "icon",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "emoji",
+                                "type": "text",
+                                "label": "Emoji"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Icon"
+                    },
+                    {
+                        "name": "cover",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "external",
+                                "spec": [
+                                    {
+                                        "name": "url",
+                                        "type": "text",
+                                        "label": "URL"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "External"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Cover"
+                    },
+                    {
+                        "name": "url",
+                        "type": "text",
+                        "label": "URL"
+                    },
+                    {
+                        "name": "parent",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "workspace",
+                                "type": "boolean",
+                                "label": "Workspace"
+                            },
+                            {
+                                "name": "page_id",
+                                "type": "text",
+                                "label": "Page ID"
+                            },
+                            {
+                                "name": "database_id",
+                                "type": "text",
+                                "label": "Database ID"
+                            },
+                            {
+                                "name": "data_source_id",
+                                "type": "text",
+                                "label": "Data Source ID"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Parent"
+                    },
+                    {
+                        "name": "archived",
+                        "type": "boolean",
+                        "label": "Archived"
+                    },
+                    {
+                        "name": "properties",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "id",
+                                    "type": "text",
+                                    "label": "ID"
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "text",
+                                    "label": "Type"
+                                },
+                                {
+                                    "name": "people",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "object",
+                                                "type": "text",
+                                                "label": "Object"
+                                            },
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "ID"
+                                            },
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name"
+                                            },
+                                            {
+                                                "name": "avatar_url",
+                                                "type": "text",
+                                                "label": "Avatar Url"
+                                            },
+                                            {
+                                                "name": "type",
+                                                "type": "text",
+                                                "label": "Type"
+                                            },
+                                            {
+                                                "name": "person",
+                                                "spec": [
+                                                    {
+                                                        "name": "email",
+                                                        "type": "text",
+                                                        "label": "Email"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Person"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "People"
+                                },
+                                {
+                                    "name": "url",
+                                    "type": "text",
+                                    "label": "URL"
+                                },
+                                {
+                                    "name": "text",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "type",
+                                                "type": "text",
+                                                "label": "Type"
+                                            },
+                                            {
+                                                "name": "text",
+                                                "spec": [
+                                                    {
+                                                        "name": "content",
+                                                        "type": "text",
+                                                        "label": "Content"
+                                                    },
+                                                    {
+                                                        "name": "link",
+                                                        "type": "text",
+                                                        "label": "Link"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Text"
+                                            },
+                                            {
+                                                "name": "annotations",
+                                                "spec": [
+                                                    {
+                                                        "name": "bold",
+                                                        "type": "boolean",
+                                                        "label": "Bold"
+                                                    },
+                                                    {
+                                                        "name": "italic",
+                                                        "type": "boolean",
+                                                        "label": "Italic"
+                                                    },
+                                                    {
+                                                        "name": "strikethrough",
+                                                        "type": "boolean",
+                                                        "label": "Strikethrough"
+                                                    },
+                                                    {
+                                                        "name": "underline",
+                                                        "type": "boolean",
+                                                        "label": "Underline"
+                                                    },
+                                                    {
+                                                        "name": "code",
+                                                        "type": "boolean",
+                                                        "label": "Code"
+                                                    },
+                                                    {
+                                                        "name": "color",
+                                                        "type": "text",
+                                                        "label": "Color"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Annotations"
+                                            },
+                                            {
+                                                "name": "plain_text",
+                                                "type": "text",
+                                                "label": "Plain Text"
+                                            },
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Href"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Text"
+                                },
+                                {
+                                    "name": "select",
+                                    "spec": [
+                                        {
+                                            "name": "id",
+                                            "type": "text",
+                                            "label": "ID"
+                                        },
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "label": "Name"
+                                        },
+                                        {
+                                            "name": "color",
+                                            "type": "text",
+                                            "label": "Color"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Select"
+                                },
+                                {
+                                    "name": "email",
+                                    "type": "text",
+                                    "label": "Email"
+                                },
+                                {
+                                    "name": "phone_number",
+                                    "type": "text",
+                                    "label": "Phone Number"
+                                },
+                                {
+                                    "name": "multi_select",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "ID"
+                                            },
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Multi Select"
+                                },
+                                {
+                                    "name": "date",
+                                    "spec": [
+                                        {
+                                            "name": "start",
+                                            "type": "text",
+                                            "label": "Start"
+                                        },
+                                        {
+                                            "name": "end",
+                                            "type": "text",
+                                            "label": "End"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Date"
+                                },
+                                {
+                                    "name": "checkbox",
+                                    "type": "boolean",
+                                    "label": "Checkbox"
+                                },
+                                {
+                                    "name": "number",
+                                    "type": "number",
+                                    "label": "Number"
+                                },
+                                {
+                                    "name": "files",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Files"
+                                },
+                                {
+                                    "name": "title",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "type",
+                                                "type": "text",
+                                                "label": "Type"
+                                            },
+                                            {
+                                                "name": "text",
+                                                "spec": [
+                                                    {
+                                                        "name": "content",
+                                                        "type": "text",
+                                                        "label": "Content"
+                                                    },
+                                                    {
+                                                        "name": "link",
+                                                        "type": "text",
+                                                        "label": "Link"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Text"
+                                            },
+                                            {
+                                                "name": "annotations",
+                                                "spec": [
+                                                    {
+                                                        "name": "bold",
+                                                        "type": "boolean",
+                                                        "label": "Bold"
+                                                    },
+                                                    {
+                                                        "name": "italic",
+                                                        "type": "boolean",
+                                                        "label": "Italic"
+                                                    },
+                                                    {
+                                                        "name": "strikethrough",
+                                                        "type": "boolean",
+                                                        "label": "Strikethrough"
+                                                    },
+                                                    {
+                                                        "name": "underline",
+                                                        "type": "boolean",
+                                                        "label": "Underline"
+                                                    },
+                                                    {
+                                                        "name": "code",
+                                                        "type": "boolean",
+                                                        "label": "Code"
+                                                    },
+                                                    {
+                                                        "name": "color",
+                                                        "type": "text",
+                                                        "label": "Color"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Annotations"
+                                            },
+                                            {
+                                                "name": "plain_text",
+                                                "type": "text",
+                                                "label": "Plain Text"
+                                            },
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Href"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Title"
+                                },
+                                {
+                                    "name": "last_edited_time",
+                                    "time": true,
+                                    "type": "date",
+                                    "label": "Last Edited Time"
+                                },
+                                {
+                                    "name": "created_time",
+                                    "time": true,
+                                    "type": "date",
+                                    "label": "Created Time"
+                                },
+                                {
+                                    "name": "last_edited_by",
+                                    "spec": [
+                                        {
+                                            "name": "object",
+                                            "type": "text",
+                                            "label": "Object"
+                                        },
+                                        {
+                                            "name": "id",
+                                            "type": "text",
+                                            "label": "ID"
+                                        },
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "label": "Name"
+                                        },
+                                        {
+                                            "name": "avatar_url",
+                                            "type": "text",
+                                            "label": "Avatar Url"
+                                        },
+                                        {
+                                            "name": "type",
+                                            "type": "text",
+                                            "label": "Type"
+                                        },
+                                        {
+                                            "name": "person",
+                                            "spec": [
+                                                {
+                                                    "name": "email",
+                                                    "type": "text",
+                                                    "label": "Email"
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Person"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Last Edited By"
+                                },
+                                {
+                                    "name": "created_by",
+                                    "spec": [
+                                        {
+                                            "name": "object",
+                                            "type": "text",
+                                            "label": "Object"
+                                        },
+                                        {
+                                            "name": "id",
+                                            "type": "text",
+                                            "label": "ID"
+                                        },
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "label": "Name"
+                                        },
+                                        {
+                                            "name": "avatar_url",
+                                            "type": "text",
+                                            "label": "Avatar Url"
+                                        },
+                                        {
+                                            "name": "type",
+                                            "type": "text",
+                                            "label": "Type"
+                                        },
+                                        {
+                                            "name": "person",
+                                            "spec": [
+                                                {
+                                                    "name": "email",
+                                                    "type": "text",
+                                                    "label": "Email"
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Person"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Created By"
+                                },
+                                {
+                                    "name": "formula",
+                                    "spec": [
+                                        {
+                                            "name": "type",
+                                            "type": "text",
+                                            "label": "Type"
+                                        },
+                                        {
+                                            "name": "string",
+                                            "type": "text",
+                                            "label": "String"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Formula"
+                                },
+                                {
+                                    "name": "relation",
+                                    "spec": {
+                                        "spec": [
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "ID"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    "type": "array",
+                                    "label": "Relation"
+                                },
+                                {
+                                    "name": "label",
+                                    "type": "text",
+                                    "label": "Label"
+                                }
+                            ],
+                            "type": "collection"
+                        },
+                        "type": "array",
+                        "label": "Properties"
+                    },
+                    {
+                        "name": "properties_value",
+                        "spec": [
+                            {
+                                "name": "Motif",
+                                "spec": [
+                                    {
+                                        "name": "type",
+                                        "type": "text",
+                                        "label": "Type"
+                                    },
+                                    {
+                                        "name": "text",
+                                        "spec": [
+                                            {
+                                                "name": "content",
+                                                "type": "text",
+                                                "label": "Content"
+                                            },
+                                            {
+                                                "name": "link",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "annotations",
+                                        "spec": [
+                                            {
+                                                "name": "bold",
+                                                "type": "boolean",
+                                                "label": "Bold"
+                                            },
+                                            {
+                                                "name": "italic",
+                                                "type": "boolean",
+                                                "label": "Italic"
+                                            },
+                                            {
+                                                "name": "strikethrough",
+                                                "type": "boolean",
+                                                "label": "Strikethrough"
+                                            },
+                                            {
+                                                "name": "underline",
+                                                "type": "boolean",
+                                                "label": "Underline"
+                                            },
+                                            {
+                                                "name": "code",
+                                                "type": "boolean",
+                                                "label": "Code"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Annotations"
+                                    },
+                                    {
+                                        "name": "plain_text",
+                                        "type": "text",
+                                        "label": "Plain Text"
+                                    },
+                                    {
+                                        "name": "href",
+                                        "type": "text",
+                                        "label": "Href"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Motif"
+                            },
+                            {
+                                "name": "Date fin",
+                                "spec": [
+                                    {
+                                        "name": "start",
+                                        "type": "date",
+                                        "label": "Start"
+                                    },
+                                    {
+                                        "name": "end",
+                                        "type": "date",
+                                        "label": "End"
+                                    },
+                                    {
+                                        "name": "time_zone",
+                                        "type": "text",
+                                        "label": "Time Zone"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Date fin"
+                            },
+                            {
+                                "name": "Date début",
+                                "spec": [
+                                    {
+                                        "name": "start",
+                                        "type": "date",
+                                        "label": "Start"
+                                    },
+                                    {
+                                        "name": "end",
+                                        "type": "date",
+                                        "label": "End"
+                                    },
+                                    {
+                                        "name": "time_zone",
+                                        "type": "text",
+                                        "label": "Time Zone"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Date début"
+                            },
+                            {
+                                "name": "Unité",
+                                "spec": [
+                                    {
+                                        "name": "type",
+                                        "type": "text",
+                                        "label": "Type"
+                                    },
+                                    {
+                                        "name": "text",
+                                        "spec": [
+                                            {
+                                                "name": "content",
+                                                "type": "text",
+                                                "label": "Content"
+                                            },
+                                            {
+                                                "name": "link",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "annotations",
+                                        "spec": [
+                                            {
+                                                "name": "bold",
+                                                "type": "boolean",
+                                                "label": "Bold"
+                                            },
+                                            {
+                                                "name": "italic",
+                                                "type": "boolean",
+                                                "label": "Italic"
+                                            },
+                                            {
+                                                "name": "strikethrough",
+                                                "type": "boolean",
+                                                "label": "Strikethrough"
+                                            },
+                                            {
+                                                "name": "underline",
+                                                "type": "boolean",
+                                                "label": "Underline"
+                                            },
+                                            {
+                                                "name": "code",
+                                                "type": "boolean",
+                                                "label": "Code"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Annotations"
+                                    },
+                                    {
+                                        "name": "plain_text",
+                                        "type": "text",
+                                        "label": "Plain Text"
+                                    },
+                                    {
+                                        "name": "href",
+                                        "type": "text",
+                                        "label": "Href"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Unité"
+                            },
+                            {
+                                "name": "Suivi des heures",
+                                "spec": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "ID"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Suivi des heures"
+                            },
+                            {
+                                "name": "Nb de jours",
+                                "type": "number",
+                                "label": "Nb de jours"
+                            },
+                            {
+                                "name": "Collaborateur",
+                                "spec": [
+                                    {
+                                        "name": "type",
+                                        "type": "text",
+                                        "label": "Type"
+                                    },
+                                    {
+                                        "name": "text",
+                                        "spec": [
+                                            {
+                                                "name": "content",
+                                                "type": "text",
+                                                "label": "Content"
+                                            },
+                                            {
+                                                "name": "link",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "annotations",
+                                        "spec": [
+                                            {
+                                                "name": "bold",
+                                                "type": "boolean",
+                                                "label": "Bold"
+                                            },
+                                            {
+                                                "name": "italic",
+                                                "type": "boolean",
+                                                "label": "Italic"
+                                            },
+                                            {
+                                                "name": "strikethrough",
+                                                "type": "boolean",
+                                                "label": "Strikethrough"
+                                            },
+                                            {
+                                                "name": "underline",
+                                                "type": "boolean",
+                                                "label": "Underline"
+                                            },
+                                            {
+                                                "name": "code",
+                                                "type": "boolean",
+                                                "label": "Code"
+                                            },
+                                            {
+                                                "name": "color",
+                                                "type": "text",
+                                                "label": "Color"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Annotations"
+                                    },
+                                    {
+                                        "name": "plain_text",
+                                        "type": "text",
+                                        "label": "Plain Text"
+                                    },
+                                    {
+                                        "name": "href",
+                                        "type": "text",
+                                        "label": "Href"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Collaborateur"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Properties Value"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": true,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu1.make.com",
+        "notes": []
+    }
+}

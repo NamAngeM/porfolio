@@ -815,6 +815,51 @@ section {
     user-select: none;
 }
 
+/* Hero location */
+.hero .hero-location {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: -1.5rem 0 2rem;
+}
+.hero-location i { color: var(--accent-main); margin-right: 0.3rem; }
+
+/* Education */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.edu-card h3 { font-size: 1.2rem; margin: 0.8rem 0 0.3rem; line-height: 1.3; }
+.edu-card h4 {
+    font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);
+    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.8rem;
+}
+.edu-card p { color: var(--text-secondary); font-size: 0.92rem; }
+.edu-date {
+    display: inline-block; font-weight: 800; font-size: 0.85rem;
+    background: var(--accent-highlight); border: 2px solid var(--text-primary);
+    padding: 0.15rem 0.5rem;
+}
+
+/* Contact */
+.contact-section { padding-bottom: 80px; }
+.contact-card { text-align: left; }
+.contact-card h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.8rem; }
+.contact-card p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem; max-width: 640px; }
+.contact-card .btn { text-transform: none; }
+
+/* Footer */
+.site-footer {
+    border-top: 2px solid var(--border-color);
+    background: var(--bg-color);
+    text-align: center;
+    padding: 1.5rem 5%;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
 /* Mobile Bottom Nav (Hidden by default) */
 .mobile-bottom-nav {
     display: none;

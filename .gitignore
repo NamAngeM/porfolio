@@ -34,3 +34,6 @@ cv/
 # Local Claude Code settings
 .claude/
 
+
+# Documents internes de stage (confidentiels) - ne pas publier
+stage/

@@ -21,7 +21,7 @@
     <!-- Theme Color pour navigateur mobile -->
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,15 +32,18 @@
 
 
     <nav class="glass-nav">
+        <div class="scroll-progress" aria-hidden="true"></div>
         <div class="nav-content">
-            <div class="logo">Ange NGOUNDZI<span class="dot"></span></div>
+            <a href="#home" class="logo"><span class="logo-mark">AN</span>Ange NGOUNDZI</a>
             <ul class="nav-links">
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#experience">Parcours</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#education">Formation</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <span class="nav-indicator" aria-hidden="true"></span>
             </ul>
+            <a href="cv-ange-ngoundzi.pdf" target="_blank" class="btn btn-primary btn-sm nav-cta"><i class="fa-solid fa-file-arrow-down"></i> CV</a>
         </div>
     </nav>
 
@@ -63,8 +66,8 @@
                 </p>
                 <div class="stats fade-in-up delay-2">
                     <div class="stat"><strong>3 j → 5 min</strong><span>pour comparer les offres fournisseurs</span></div>
-                    <div class="stat"><strong>100 %</strong><span>d'adoption par les utilisateurs</span></div>
-                    <div class="stat"><strong>90 %</strong><span>de fiabilité du prévisionnel</span></div>
+                    <div class="stat"><strong><span class="count" data-to="100">100</span> %</strong><span>d'adoption par les utilisateurs</span></div>
+                    <div class="stat"><strong><span class="count" data-to="90">90</span> %</strong><span>de fiabilité du prévisionnel</span></div>
                 </div>
                 <div class="hero-actions fade-in-up delay-3">
                     <a href="cv-ange-ngoundzi.pdf" target="_blank" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Télécharger mon CV</a>
@@ -489,7 +492,7 @@
         <p>© 2026 Ange Ngoundzi · Product Manager · Nantes</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 
 </html>

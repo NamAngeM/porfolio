@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optional: Stop observing once revealed
-                // observer.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
         });
     };
@@ -53,32 +52,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Parallax effect on mouse move for the hero card
-    const heroVisual = document.querySelector('.hero-visual');
-    const visualCard = document.querySelector('.visual-card');
-
-    if (heroVisual && visualCard) {
-        heroVisual.addEventListener('mousemove', (e) => {
-            const rect = heroVisual.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = ((y - centerY) / centerY) * -15;
-            const rotateY = ((x - centerX) / centerX) * 15;
-            
-            visualCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-
-        heroVisual.addEventListener('mouseleave', () => {
-            visualCard.style.transform = `perspective(1000px) rotateX(10deg) rotateY(-15deg)`;
-            visualCard.style.transition = 'transform 0.5s ease';
-        });
-
-        heroVisual.addEventListener('mouseenter', () => {
-            visualCard.style.transition = 'none';
-        });
-    }
 });
